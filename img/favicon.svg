@@ -1,0 +1,7 @@
+<!-- PLACEHOLDER favicon. Replace with the real mark once the logo vector exists. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="4" fill="#324353"/>
+  <path d="M32 48V26" stroke="#F2F5F6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 30c0-7 5-12 12-12 0 7-5 12-12 12Z" fill="none" stroke="#F2F5F6" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M32 38c0-6-4-10-10-10 0 6 4 10 10 10Z" fill="none" stroke="#B04A63" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,42 @@
+<!-- From Seed to Shelter — mark, redrawn as vector from logo-mark-slate.png.
+     Geometry measured off the 924x924 original: uniform 12.5px stroke, symmetric
+     about x=464.5. viewBox matches the PNG exactly, so this is a drop-in
+     replacement with no layout change.
+
+     Uses currentColor: ONE file serves both light and dark backgrounds. Set
+     `color` on the parent (or the img is swapped for inline SVG) instead of
+     shipping two raster files. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 924 924" width="924" height="924"
+     fill="none" stroke="currentColor" stroke-width="12.5"
+     stroke-linecap="round" stroke-linejoin="round"
+     role="img" aria-label="From Seed to Shelter">
+
+  <!-- Shelter: doubled triangle outline, with the apex connector between them -->
+  <path d="M464.5 172 L852.5 659.5 L76.5 659.5 Z"/>
+  <path d="M197.5 659.5 L464.5 268 L731.5 659.5"/>
+  <path d="M464.5 172 L464.5 268"/>
+
+  <!-- Seedling: stem doubles as the midrib of the upper leaf -->
+  <path d="M464.5 376 L464.5 659.5"/>
+  <path d="M464.5 376 C498.5 412 512.5 456 464.5 474 C416.5 456 430.5 412 464.5 376 Z"/>
+
+  <!-- Lower leaves, mirrored about x=464.5. Curves fitted to the measured
+       half-width profile of the original: peak 32 units at ~48% along the
+       axis, outline closing at ~86% with the midrib running on to the stem. -->
+  <path d="M361 470 C409.1 458 453.5 489.4 446.2 545.7 C391.1 559.6 354.7 519.2 361 470 Z"/>
+  <path d="M361 470 L464.5 560"/>
+  <path d="M568 470 C519.9 458 475.5 489.4 482.8 545.7 C537.9 559.6 574.3 519.2 568 470 Z"/>
+  <path d="M568 470 L464.5 560"/>
+
+  <!-- Broken ground. Dashes symmetrised about x=464.5; the original drifts a
+       few units, which reads as wobble rather than intent at small sizes.
+       The dots are drawn slightly heavier than the stroke, as in the original. -->
+  <path d="M369.5 705 L559.5 705"/>
+  <path d="M250 738 L265 738"/>
+  <path d="M298 738 L631 738"/>
+  <path d="M664 738 L679 738"/>
+  <path d="M408.5 776 L520.5 776"/>
+  <circle cx="370" cy="776" r="8" fill="currentColor" stroke="none"/>
+  <circle cx="559" cy="776" r="8" fill="currentColor" stroke="none"/>
+  <circle cx="464.5" cy="817" r="8" fill="currentColor" stroke="none"/>
+</svg>

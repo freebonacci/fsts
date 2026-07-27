@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Seed to Shelter — food and nutrition for displaced people</title>
+<meta name="description" content="An initiative tackling food and nutrition challenges facing displaced people. We look for vulnerabilities overlooked by bigger organisations and work with communities to solve them.">
+
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://fromseedtoshelter.com/">
+
+<!-- Self-hosted, so no preconnect to any third party is needed. Preloading the
+     two faces used above the fold removes the swap flash on first paint. -->
+<link rel="preload" href="fonts/jost-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="css/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fromseedtoshelter.com/">
+<meta property="og:title" content="From Seed to Shelter">
+<meta property="og:description" content="Refuge should mean safety, not more vulnerability.">
+<!-- TODO ASSET: replace with a real 1200x630 PNG or JPG. Social platforms do
+     not render SVG og:images — shared links currently show no preview card. -->
+<meta property="og:image" content="https://fromseedtoshelter.com/img/placeholder-og.svg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap wrap--wide site-header__inner">
+    <a class="brand" href="index.html" aria-current="page">
+      <img class="brand__mark" src="img/logo-mark-white.png" alt="" width="924" height="924">
+      <span class="brand__name">from seed to shelter</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="work.html">our work</a></li>
+        <li><a href="resources.html">resources</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main id="main">
+
+  <!-- ===================================================================
+       Hero. Text left, photograph right, side by side on desktop; the photo
+       drops below the text on narrow screens. Text is never set over the
+       photograph — it cannot be guaranteed AA without a heavy scrim.
+
+       .hero__inner sits inside .wrap rather than on it, so the section flow
+       rule (`.section > .wrap > * + *`) does not put a stray top margin on
+       the photograph when it is a grid item.
+       =================================================================== -->
+  <section class="section hero">
+    <div class="wrap wrap--wide">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <h1>Refuge should mean safety, not more vulnerability.</h1>
+          <p class="hero__lead">
+            From Seed to Shelter is an initiative tackling food and nutrition
+            challenges facing displaced people. We look for vulnerabilities
+            overlooked by bigger organisations and work with communities to
+            solve them.
+          </p>
+        </div>
+
+        <figure>
+          <img class="hero__photo" src="img/Moria_Food_line.jpg"
+               alt="A queue of people waiting for a food distribution beside container units at Moria Camp."
+               width="1024" height="768">
+          <figcaption class="caption">
+            People waiting in line for food in Moria Refugee Camp, Greece (2020)
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       What we do — Slate. Three beats, hairline rules, not numbered:
+       this is a posture, not a sequence.
+
+       The dark section re-points the semantic tokens, so .beats and .eyebrow
+       invert on their own — no dark variants needed here.
+
+       The problem section that used to sit above this was removed: FSTS
+       works across a diverse set of problems, and framing the page around
+       one of them was unhelpful. The page now runs hero → what we do. The
+       WFP citation went with it and is not to be reinstated elsewhere.
+       =================================================================== -->
+  <section class="section section--slate section--tight" aria-labelledby="what-heading">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2 id="what-heading" class="visually-hidden">What we do</h2>
+
+      <ul class="beats">
+        <li>
+          <h3>We identify gaps</h3>
+          <p>
+            Sometimes the challenges faced by the communities aren't
+            immediately obvious. We speak directly to grassroots organisations
+            and community members to gain insight about what bigger
+            organisations miss.
+          </p>
+        </li>
+        <li>
+          <h3>We back the people already there</h3>
+          <p>
+            Refugee-led and grassroots organisations know their communities
+            best. We partner with them to support the programs that they
+            already operate, or test solutions with the potential to make a
+            difference.
+          </p>
+        </li>
+        <li>
+          <h3>We report honestly, even when it fails</h3>
+          <p>
+            We publish everything we learn. We hope that our learnings will
+            help other organisations in this space.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       Where we're working — Mist, so the Paper cards read against it.
+       No headline figures here by decision: every number belongs next to
+       its qualifications, which live on work.html.
+       =================================================================== -->
+  <section class="section" aria-labelledby="where-heading">
+    <div class="wrap wrap--wide">
+      <h2 id="where-heading" class="eyebrow">What we're working on</h2>
+
+      <ul class="cards">
+        <li class="card">
+          <div class="card__media">
+            <img src="img/spray_bottle.jpg"
+                 alt="A hand misting trays of microgreens with a spray bottle."
+                 width="5760" height="3840">
+          </div>
+          <div class="card__body">
+            <h3 class="card__place">Microgreens farming, Greece</h3>
+            <p class="card__neglect">
+              Refugees in Greece receive sufficient calories, but food provided
+              is low quality and micronutrient poor. This leads to negative
+              health impacts.
+            </p>
+            <p class="card__foot">
+              <a class="link-arrow"
+                 href="https://drive.google.com/file/d/1HiKT7T0bPAehhOc65B_rPWRrqNN12Tmt/view?usp=drive_link"
+                 target="_blank" rel="noopener">
+                Read the report →<span class="visually-hidden"> Microgreens farming, Greece</span>
+              </a>
+            </p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="card__media">
+            <img src="img/bbc_uganda_image.jpg"
+                 alt="Shelters and dirt tracks spread across a refugee settlement in Uganda, seen from above."
+                 width="640" height="360">
+          </div>
+          <div class="card__body">
+            <h3 class="card__place">Buffer food interventions, Uganda</h3>
+            <p class="card__neglect">
+              Refugees who have newly arrived in Uganda face a reduction in
+              rations provided before their first feasible harvest. This
+              induces significant hunger, and in turn negative coping
+              mechanisms.
+            </p>
+            <p class="card__foot">
+              <a class="link-arrow" href="work.html#uganda">
+                Read our thinking →<span class="visually-hidden"> Buffer food interventions, Uganda</span>
+              </a>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       The ask — Paper. Short. The same three doors as contact.html: one
+       shared component, identical copy, kept in step by hand across the two
+       files. Change one, change the other.
+
+       No buttons and no mailto: — the address is written out once beneath
+       the three, in the site-wide "[at] / [dot]" form.
+       =================================================================== -->
+  <section class="section section--paper" aria-labelledby="ask-heading">
+    <div class="wrap wrap--wide">
+      <h2 id="ask-heading" class="eyebrow">Get in touch</h2>
+
+      <ul class="doors">
+        <li class="door">
+          <h3>Partner with us</h3>
+          <p>
+            If you are a community or grassroots organisation tackling food
+            issues, do get in touch.
+          </p>
+        </li>
+        <li class="door">
+          <h3>Tell us about a gap</h3>
+          <p>
+            If you know of a vulnerability that nobody else is working on, we'd
+            love to hear from you.
+          </p>
+        </li>
+        <li class="door">
+          <h3>Support us</h3>
+          <p>
+            If you believe in our mission and want to contribute to this space,
+            do drop us a message.
+          </p>
+        </li>
+      </ul>
+
+      <p class="source-note source-note--address">
+        Write to <span class="address address--inline">hello [at] fromseedtoshelter [dot] com</span>
+        to reach out to us.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="wrap wrap--wide">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand__mark" src="img/logo-mark-white.png" alt="" width="924" height="924">
+          <span class="brand__name">from seed to shelter</span>
+        </a>
+        <p class="footer__blurb">
+          A small initiative working on food and nutrition for displaced
+          people.
+        </p>
+        <!-- Written out, never a mailto: — site-wide rule, see CLAUDE.md. -->
+        <p class="footer__address">hello [at] fromseedtoshelter [dot] com</p>
+      </div>
+
+      <nav aria-label="Footer">
+        <ul class="footer__links">
+          <li><a href="work.html">our work</a></li>
+          <li><a href="resources.html">resources</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="footer__legal">
+      © 2026 From Seed to Shelter.
+    </p>
+  </div>
+</footer>
+
+<!-- Sticky header slide. Progressive enhancement only — the bar is sticky and
+     visible with this blocked. See js/nav.js. -->
+<script src="js/nav.js" defer></script>
+
+</body>
+</html>

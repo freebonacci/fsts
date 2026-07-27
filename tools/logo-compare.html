@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo — PNG vs SVG redraw</title>
+<style>
+  body { margin:0; background:#F2F5F6; color:#324353;
+         font-family: Jost, "Century Gothic", Futura, system-ui, sans-serif; font-weight:300; }
+  .bar { padding:24px 32px; border-bottom:1px solid rgba(50,67,83,.16); }
+  h1 { font-size:22px; font-weight:300; margin:0 0 4px; }
+  p  { margin:0; font-size:14px; color:#5A6875; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; }
+  .cell { padding:32px; border-right:1px solid rgba(50,67,83,.16); }
+  .cell:last-child { border-right:0; }
+  .lab { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B04A63; margin-bottom:16px; }
+  .box { background:#fff; border:1px solid rgba(50,67,83,.16); display:grid; place-items:center; padding:16px; }
+  .box img, .box svg { width:100%; height:auto; display:block; }
+  /* An <img>-loaded SVG is its own document, so currentColor cannot inherit
+     from the page. Masking paints the shape with any CSS colour we like. */
+  .mask { width:100%; aspect-ratio:1; background:currentColor;
+          -webkit-mask:url(../img/logo-mark.svg) center/contain no-repeat;
+                  mask:url(../img/logo-mark.svg) center/contain no-repeat; }
+  /* Overlay: SVG in radish on top of the PNG, so any drift is visible. */
+  .ov { position:relative; background:#fff; border:1px solid rgba(50,67,83,.16); }
+  .ov img, .ov object { display:block; width:100%; }
+  .ov object { position:absolute; inset:0; }
+  .dark { background:#324353; }
+  .sizes { display:flex; align-items:flex-end; gap:28px; padding:32px; border-top:1px solid rgba(50,67,83,.16); flex-wrap:wrap; }
+  .sizes figure { margin:0; text-align:center; }
+  .sizes figcaption { font-size:12px; color:#5A6875; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <h1>Logo mark — supplied PNG vs SVG redraw</h1>
+  <p>Left is your PNG. Right is the redraw. Third row overlays the redraw in radish over the PNG — drift shows as colour fringing.</p>
+</div>
+
+<div class="grid">
+  <div class="cell">
+    <div class="lab">PNG — logo-mark-slate.png</div>
+    <div class="box"><img src="../img/logo-mark-slate.png" alt="Supplied PNG mark"></div>
+  </div>
+  <div class="cell">
+    <div class="lab">SVG redraw — logo-mark.svg</div>
+    <div class="box" style="color:#324353"><div class="mask" role="img" aria-label="SVG redraw"></div></div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="cell">
+    <div class="lab">PNG on slate — logo-mark-white.png</div>
+    <div class="box dark"><img src="../img/logo-mark-white.png" alt="Supplied white PNG mark"></div>
+  </div>
+  <div class="cell">
+    <div class="lab">SVG redraw on slate — same single file</div>
+    <div class="box dark" style="color:#fff"><div class="mask" role="img" aria-label="SVG redraw, white"></div></div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="cell" style="grid-column:1/-1">
+    <div class="lab">Overlay — redraw in radish over the PNG</div>
+    <div class="ov" style="max-width:520px">
+      <img src="../img/logo-mark-slate.png" alt="">
+      <div class="mask" style="position:absolute;inset:0;color:#B04A63"></div>
+    </div>
+  </div>
+</div>
+
+<div class="sizes">
+  <figure><img src="../img/logo-mark.svg" width="140" alt=""><figcaption>140px</figcaption></figure>
+  <figure><img src="../img/logo-mark.svg" width="72" alt=""><figcaption>72px</figcaption></figure>
+  <figure><img src="../img/logo-mark.svg" width="40" alt=""><figcaption>40px — header size</figcaption></figure>
+  <figure><img src="../img/logo-mark.svg" width="24" alt=""><figcaption>24px</figcaption></figure>
+  <figure><img src="../img/logo-mark-slate.png" width="40" alt=""><figcaption>PNG at 40px</figcaption></figure>
+</div>
+
+</body>
+</html>

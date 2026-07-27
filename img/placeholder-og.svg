@@ -1,0 +1,14 @@
+<!-- PLACEHOLDER social share image, 1200x630.
+     NOTE: most platforms (Facebook, LinkedIn, X, Slack) will NOT render an SVG
+     og:image. This must be replaced with a real PNG or JPG before launch or
+     shared links will show no preview card at all. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Placeholder social share image">
+  <rect width="1200" height="630" fill="#324353"/>
+  <g font-family="Jost, Century Gothic, Futura, sans-serif" fill="#FFFFFF">
+    <text x="90" y="150" font-size="26" letter-spacing="8" fill="#E9A0B0">PLACEHOLDER — OG IMAGE 1200×630</text>
+    <text x="90" y="300" font-size="64" font-weight="300">from seed to shelter</text>
+    <text x="90" y="380" font-size="34" font-weight="300" fill="#A9B4BE">Refuge should mean safety,</text>
+    <text x="90" y="430" font-size="34" font-weight="300" fill="#A9B4BE">not new vulnerability.</text>
+    <text x="90" y="545" font-size="24" fill="#E9A0B0">Replace with a real PNG/JPG — SVG og:image is not supported</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+# Local verification artifacts, not part of the site.
+# tools/*.js are kept (they document how the logo was measured); the images
+# they generate are not.
+tools/shots/
+tools/svg-render.png
+tools/logo-diff.png
+tools/render.html
