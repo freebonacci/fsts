@@ -41,8 +41,7 @@ their failures; equal visual weight is the one thing meant to make this site
 memorable. Do not de-emphasise the limitations block: not smaller, not muted,
 not moved to the end, not behind a toggle.
 
-**Held back:** the six Samos team members are not named anywhere in the repo
-until each confirms in writing. There is no photo-consent line in the footer.
+**Held back:** there is no photo-consent line in the footer.
 
 **Budget:** under 500KB per page — partners open this on a phone on a poor
 connection. Self-hosted fonts, no CDN, no analytics, no embeds, no cookie

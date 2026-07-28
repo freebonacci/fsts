@@ -1080,6 +1080,12 @@ a:hover {
   margin-top: 2px;
 }
 
+/* A labelled group below the partners list, in the same section. One step up
+   from the default block rhythm so the label reads as starting a new group
+   rather than trailing the list above it. Beats `.wrap > * + *` on source
+   order, not specificity — both are one class. */
+.people-sub { margin-top: var(--sp-6); }
+
 
 /* ----------------------------------------------------------------------------
    13h. Team — about.html. Three across on desktop, stacked below.
