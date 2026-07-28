@@ -139,8 +139,11 @@
   --section-y-tight: clamp(1.75rem, 3vw, 2.5rem);
 
   /* --- Layout ----------------------------------------------------------- */
-  --container: 720px;   /* the column everything aligns to                   */
-  --container-wide: 1120px;   /* cards, two-up grids                         */
+  /* In rem, not px, so the columns follow the root scale. If the type shrank
+     and these did not, the same 720px would hold ~73 characters and break the
+     measure below. 45rem/70rem are 720px/1120px at the base scale. */
+  --container: 45rem;   /* the column everything aligns to                   */
+  --container-wide: 70rem;    /* cards, two-up grids                         */
   --measure: 66ch;      /* prose measure — the brief's 65–70 characters      */
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
 
@@ -225,6 +228,33 @@ video {
 /* ----------------------------------------------------------------------------
    4. Base type
 ---------------------------------------------------------------------------- */
+
+/* The global scale. Every type and space token is expressed in rem, so this is
+   the single lever that moves the whole system: type, spacing and the two
+   containers come down together and every relationship between them survives.
+   Percent, not px, so a reader who has raised their browser font size keeps
+   that increase — this reduces their size by a tenth, it does not override it.
+
+   Desktop only. At 90% the --t--1 tier lands at 11.7px, and the small end of
+   this design is tuned for a phone read in daylight (see the body weight note
+   below), so the reduction would cost more there than it gains. 760px is where
+   the team, resource and project grids already go multi-column, so the change
+   in scale lands inside a reflow that was happening anyway rather than on its
+   own. Every breakpoint in this file is in px and so none of them shift. */
+@media (min-width: 760px) {
+  html { font-size: 90%; }
+
+  /* The rem ends of these two follow the root, but the vw term in the middle
+     does not, and it is what governs section padding from 760px to about
+     1200px — leaving it would shrink the type there and not the rhythm around
+     it. Same coefficients, less a tenth. The other vw clamps (--gutter, --t-4,
+     --t-fig, --t-addr) sit pinned to their rem maximum at every width this
+     query covers, so they already come down with the root and need nothing. */
+  :root {
+    --section-y:       clamp(2.25rem, 4.05vw, 3.75rem);
+    --section-y-tight: clamp(1.75rem, 2.7vw, 2.5rem);
+  }
+}
 
 body {
   background: var(--mist);
@@ -430,14 +460,18 @@ a:hover {
   text-decoration: none;
 }
 
+/* Sized in rem so the mark tracks the wordmark beside it under the root scale;
+   in px it would stay put while the wordmark shrank and the lockup would come
+   apart. The corrections are proportions of the mark, so they are in rem too.
+   2.875rem/0.5rem/0.25rem/0.125rem are 46/8/4/2px at the base scale. */
 .brand__mark {
-  width: 46px;
-  height: 46px;
+  width: 2.875rem;
+  height: 2.875rem;
   flex: none;
-  margin-block: -8px;
-  margin-inline-start: -4px;   /* artwork is inset 7.7% on the left */
+  margin-block: -0.5rem;
+  margin-inline-start: -0.25rem;   /* artwork is inset 7.7% on the left */
   position: relative;
-  top: -2px;
+  top: -0.125rem;
 }
 
 .brand__name {
@@ -455,7 +489,7 @@ a:hover {
 .brand:hover .brand__name { color: var(--accent); }
 
 @media (max-width: 480px) {
-  .brand__mark { width: 40px; height: 40px; }
+  .brand__mark { width: 2.5rem; height: 2.5rem; }   /* 40px */
   .brand__name { font-size: 1.125rem; }
 }
 
