@@ -1056,6 +1056,7 @@ a:hover {
 }
 
 .resource {
+  position: relative;   /* anchor for .resource__year */
   display: flex;
   flex-direction: column;
   background: var(--bg-raised);
@@ -1064,7 +1065,13 @@ a:hover {
   padding: var(--sp-6);
 }
 
-.resource h3 { font-size: var(--t-1); margin-bottom: var(--sp-3); }
+/* The year sits in the corner, so the heading reserves room for it rather
+   than running underneath. Harmless on the card that carries no year. */
+.resource h3 {
+  font-size: var(--t-1);
+  margin-bottom: var(--sp-3);
+  padding-right: var(--sp-7);
+}
 .resource p  { font-size: 1.0625rem; }
 
 .resource__meta {
@@ -1075,6 +1082,29 @@ a:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-muted);
+}
+
+/* Same small-label voice as .resource__meta, parked in the top-right corner
+   of the card, but in the accent rather than Stone — the year is the one bit
+   of colour on the card.
+
+   Accent, not a gold: no gold that still reads as gold clears AA on Paper
+   (#D4AF37 is 2.10:1, darkgoldenrod 3.25:1). Darkening one until it passes
+   lands on mustard, and it would then fail on Slate, so it would need its own
+   light tint like --radish-light — a warm token pair added to a cool palette
+   for one badge. --accent is 5.24:1 on Paper and re-points on dark already.
+
+   Weight 400, matching .eyebrow, which is the other accent-coloured label —
+   300 leaves coloured digits this small looking underinked. */
+.resource__year {
+  position: absolute;
+  top: var(--sp-6);
+  right: var(--sp-6);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--t--1);
+  letter-spacing: 0.04em;
+  color: var(--accent);
 }
 
 .resource__foot { margin-top: auto; padding-top: var(--sp-5); }
