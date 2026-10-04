@@ -3,11 +3,11 @@
 The HTML is the source of truth for copy. This file is the decisions that are
 settled, so they do not get relitigated.
 
-**No framework, no build step, no bundler, no package.json.** Six pages of plain
+**No framework, no build step, no bundler, no package.json.** Seven pages of plain
 HTML, one stylesheet, one script. Editing a file changes the site; if you want a
 preprocessor or a component system, the answer is no — the constraint is the
 point. There is no server, so no forms and no includes: header, footer and the
-`nav.js` tag are duplicated in all six pages by hand (`404.html` needs absolute
+`nav.js` tag are duplicated in every page by hand (`404.html` needs absolute
 paths). Run `node tools/serve.js`, not `file://` — fonts silently fall back
 otherwise. **Do not commit or push unless asked**; the repo is public.
 
@@ -35,7 +35,7 @@ why the nav wraps to a second row rather than becoming a hamburger. Under
 Keep both.
 
 **The signature element.** `.panel` is used for both the results block and the
-*Limitations* block on `work.html`, deliberately identically — same size, same
+*Limitations* block on `greece.html`, deliberately identically — same size, same
 padding, same border, one directly beneath the other. Most organisations bury
 their failures; equal visual weight is the one thing meant to make this site
 memorable. Do not de-emphasise the limitations block: not smaller, not muted,

@@ -334,7 +334,7 @@ a:hover {
    404.html keep the 720px column. */
 .page--wide .wrap { max-width: var(--container-wide); }
 
-/* work.html runs as one centred reading column instead. Re-pointing --measure
+/* greece.html runs as one centred reading column instead. Re-pointing --measure
    at the body is what makes it hold together: .prose, .figure, .status, .facts
    and .panel > p all read that token, so they land on the column's edges
    rather than each capping somewhere shorter. Scoped to main so the header and
@@ -520,9 +520,23 @@ a:hover {
   border-bottom-color: var(--ink);
 }
 
+/* On a phone the lockup drops to the mark alone so mark and nav share one
+   row. The wordmark is clipped, not display:none — the mark's alt is empty,
+   so the span is the link's accessible name. The footer keeps its wordmark. flex-wrap stays on: below
+   ~330px the nav still drops to a second row rather than overflowing. */
+@media (max-width: 600px) {
+  .site-header__inner { gap: var(--sp-3) var(--sp-4); }
+  .site-header .brand__name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .site-nav ul { gap: var(--sp-3) var(--sp-4); }
+}
+
 @media (max-width: 480px) {
-  .site-header__inner { gap: var(--sp-4); }
-  .site-nav { width: 100%; }
   .site-nav a { font-size: 0.9375rem; }
 }
 
@@ -592,7 +606,7 @@ a:hover {
   border-radius: var(--radius);
 }
 
-/* Shared caption style: in-column figures on work.html and the hero photo. */
+/* Shared caption style: in-column figures on greece.html and the hero photo. */
 .figure figcaption,
 .caption {
   margin-top: var(--sp-3);
@@ -683,7 +697,13 @@ a:hover {
   margin-bottom: var(--sp-5);
 }
 
+/* Flex so a card can carry two links side by side (Greece: the project page,
+   then the report); they wrap to two rows on a narrow card. */
 .card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-3) var(--sp-5);
   margin-top: auto;
   padding-top: var(--sp-5);
   border-top: 1px solid var(--rule);
@@ -882,7 +902,7 @@ a:hover {
 
 
 /* ----------------------------------------------------------------------------
-   13c. Project section — one per project on work.html
+   13c. Project section — project detail on greece.html
 ---------------------------------------------------------------------------- */
 
 .project {
@@ -893,6 +913,8 @@ a:hover {
 
 .project + .project { margin-top: var(--sp-8); }
 
+/* greece.html carries the project title as its h1, at the same size. */
+.project h1,
 .project h2 { font-size: var(--t-2); margin-bottom: var(--sp-5); }
 
 /* Flow inside a project. Components defined further down (.panel, .status)
@@ -1165,8 +1187,14 @@ a:hover {
   list-style: none;
 }
 
+/* Four people: two by two on a tablet, one row of four on desktop, so nobody
+   sits alone on a second row. */
 @media (min-width: 760px) {
-  .team { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+  .team { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
+}
+
+@media (min-width: 1000px) {
+  .team { grid-template-columns: repeat(4, 1fr); }
 }
 
 .team > li {
@@ -1197,6 +1225,12 @@ a:hover {
   font-weight: 300;
   font-size: 1rem;
 }
+
+/* Slate, not the accent: the section labels above are red, and red links
+   under red labels read as more labels. Underlined, so still clearly links;
+   they take the accent on hover. */
+.team__links a { color: var(--ink); }
+.team__links a:hover { color: var(--accent); }
 
 
 /* ----------------------------------------------------------------------------
