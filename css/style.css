@@ -699,6 +699,10 @@ a:hover {
 
 /* Flex so a card can carry two links side by side (Greece: the project page,
    then the report); they wrap to two rows on a narrow card. */
+/* The card is a flex column, so margins don't collapse: without this a second
+   paragraph sits 48px below the first, not the usual 24px from p + p. */
+.card__neglect:has(+ .card__neglect) { margin-bottom: 0; }
+
 .card__foot {
   display: flex;
   flex-wrap: wrap;
