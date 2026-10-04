@@ -871,6 +871,14 @@ a:hover {
 
 .link-arrow:hover { color: var(--ink); }
 
+/* Two or more arrow links side by side; they wrap to rows when narrow. */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-3) var(--sp-5);
+}
+
 
 /* ----------------------------------------------------------------------------
    13b. Page header — inner pages
