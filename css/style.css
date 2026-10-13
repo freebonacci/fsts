@@ -63,9 +63,9 @@
 /* Handwriting, for the ringed notes on the home page and nothing else.
    Latin subset only (Google Fonts' "latin" range), SIL OFL. */
 @font-face {
-  font-family: "Caveat Brush";
-  src: url("../fonts/caveat-brush-400.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Kalam";
+  src: url("../fonts/kalam-700.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -108,7 +108,7 @@
                   system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body:    "Spectral", "Iowan Old Style", "Palatino Linotype",
                   Palatino, Georgia, "Times New Roman", serif;
-  --font-hand:    "Caveat Brush", "Segoe Print", "Bradley Hand", cursive;
+  --font-hand:    "Kalam", "Segoe Print", "Bradley Hand", cursive;
 
   /* 1.25 scale, hand-tuned. Body is 19px. */
   --t--1:   0.8125rem;  /* 13px — eyebrows, captions, meta                   */
@@ -631,7 +631,7 @@ a:hover {
 
 
 /* ----------------------------------------------------------------------------
-   9. Notes — "what we do". Three phrases in Caveat Brush, each ringed
+   9. Notes — "what we do". Three phrases in Kalam Bold, each ringed
       in crayon, then
       a short paragraph. The only hand-drawn moment on the site; it answers
       the hero lead directly above ("we look for vulnerabilities… work with
@@ -658,6 +658,19 @@ a:hover {
 
 .filter-defs { position: absolute; }
 
+/* The group shrinks to the row of rings and centres, so "We…" (flush left
+   inside it) sits above the leftmost ring. Each ring finishes the sentence. */
+.notes-group {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.notes__lead {
+  margin: 0 0 var(--sp-5);
+  font-weight: 300;
+  font-size: var(--t-2);
+}
+
 .notes {
   display: flex;
   flex-wrap: wrap;
@@ -679,7 +692,7 @@ a:hover {
   white-space: nowrap;
   padding: var(--sp-2) var(--sp-5);
   font-family: var(--font-hand);
-  font-weight: 400;
+  font-weight: 700;
   font-size: var(--t-1);
   line-height: 1.2;
   text-align: center;
