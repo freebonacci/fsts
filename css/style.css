@@ -1034,19 +1034,13 @@ a:hover {
 
 .panel + .panel { margin-top: var(--sp-5); }
 
-/* Results and Limitations side by side on desktop, stacked on mobile with
-   results first (source order). Equal tracks and `stretch` are load-bearing:
-   the two must be the same width and the same height. Never give the second
-   one a narrower track. */
+/* Results and Limitations stacked at every width, results first (source
+   order), limitations directly beneath. One shared track, so the two are
+   always the same width. Never give the second one a narrower track. */
 .panels {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-5);
-  align-items: stretch;
-}
-
-@media (min-width: 900px) {
-  .panels { grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
 }
 
 /* Grid gap does the spacing, and the pair spans the full column rather than
