@@ -24,7 +24,7 @@ Dark sections and the header re-point `--bg` / `--ink` / `--ink-muted` /
 `--accent` / `--rule`, so components need no dark variant: write
 `var(--accent)`, never `var(--radish)`, which measures 1.94:1 on slate and fails
 WCAG AA. Jost for display, Spectral for body, sentence case everywhere.
-Architects Daughter (handwriting) is used only for the ringed notes on the
+Caveat Brush (handwriting) is used only for the ringed notes on the
 home page. Corners 4px or square; no shadows, no gradients. Focus is
 `2px solid var(--accent)` and is never removed. Responsive to 360px.
 

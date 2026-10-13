@@ -63,8 +63,8 @@
 /* Handwriting, for the ringed notes on the home page and nothing else.
    Latin subset only (Google Fonts' "latin" range), SIL OFL. */
 @font-face {
-  font-family: "Architects Daughter";
-  src: url("../fonts/architects-daughter-400.woff2") format("woff2");
+  font-family: "Caveat Brush";
+  src: url("../fonts/caveat-brush-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -108,7 +108,7 @@
                   system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body:    "Spectral", "Iowan Old Style", "Palatino Linotype",
                   Palatino, Georgia, "Times New Roman", serif;
-  --font-hand:    "Architects Daughter", "Segoe Print", "Bradley Hand", cursive;
+  --font-hand:    "Caveat Brush", "Segoe Print", "Bradley Hand", cursive;
 
   /* 1.25 scale, hand-tuned. Body is 19px. */
   --t--1:   0.8125rem;  /* 13px — eyebrows, captions, meta                   */
@@ -631,7 +631,7 @@ a:hover {
 
 
 /* ----------------------------------------------------------------------------
-   9. Notes — "what we do". Three phrases in Architects Daughter, each ringed
+   9. Notes — "what we do". Three phrases in Caveat Brush, each ringed
       in crayon, then
       a short paragraph. The only hand-drawn moment on the site; it answers
       the hero lead directly above ("we look for vulnerabilities… work with
