@@ -641,6 +641,9 @@ a:hover {
   margin-bottom: var(--sp-3);
 }
 
+/* A beat that is only a heading sits centred between its rules. */
+.beats h3:last-child { margin-bottom: 0; }
+
 
 /* ----------------------------------------------------------------------------
    10. Project cards — "where we're working"
@@ -770,18 +773,6 @@ a:hover {
   line-height: 1.6;
   color: var(--ink-muted);
 }
-
-/* The written-out address under the doors. Same rule and spacing as a source
-   note, but it is the route off the page, so it is set to be read. */
-.source-note--address {
-  font-size: var(--t-1);
-  line-height: 1.5;
-  color: var(--ink);
-}
-
-/* The address itself in Radish, so it reads as the route out of the sentence
-   around it. --accent, not --radish: correct on a dark section too. */
-.source-note--address .address { color: var(--accent); }
 
 
 /* ----------------------------------------------------------------------------
