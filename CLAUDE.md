@@ -23,9 +23,10 @@ size or space value in a component — if a value is missing, add it to the scal
 Dark sections and the header re-point `--bg` / `--ink` / `--ink-muted` /
 `--accent` / `--rule`, so components need no dark variant: write
 `var(--accent)`, never `var(--radish)`, which measures 1.94:1 on slate and fails
-WCAG AA. Jost for display, Spectral for body, sentence case everywhere. Corners
-4px or square; no shadows, no gradients. Focus is `2px solid var(--accent)` and
-is never removed. Responsive to 360px.
+WCAG AA. Jost for display, Spectral for body, sentence case everywhere.
+Architects Daughter (handwriting) is used only for the ringed notes on the
+home page. Corners 4px or square; no shadows, no gradients. Focus is
+`2px solid var(--accent)` and is never removed. Responsive to 360px.
 
 **The sticky header.** `js/nav.js` is the only script and is pure progressive
 enhancement — it adds and removes `.site-header--hidden` and nothing else. With
