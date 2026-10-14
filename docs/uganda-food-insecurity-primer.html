@@ -33,8 +33,10 @@
 
   body { margin: 0; background: #fbf8f3; -webkit-font-smoothing: antialiased; }
   html { scroll-behavior: smooth; }
-  a { color: #1d4e79; text-decoration: none; border-bottom: 0.5pt solid rgba(29,78,121,0.45); }
-  a:hover { color: #8f5a1c; border-bottom-color: rgba(143,90,28,0.6); }
+  /* Scoped to <main>: unscoped, it put an underline on the header and footer
+     links, which should look exactly as they do on the other pages. */
+  #main a { color: #1d4e79; text-decoration: none; border-bottom: 0.5pt solid rgba(29,78,121,0.45); }
+  #main a:hover { color: #8f5a1c; border-bottom-color: rgba(143,90,28,0.6); }
   [id^="sec-"] { scroll-margin-top: 24px; }
   @media (max-width: 680px) { #gap-stat-2 { border-left: none !important; padding-left: 0 !important; border-top: 0.5pt solid rgba(234,228,217,0.28); padding-top: 4mm; } }
   /* Site stylesheet sets body type and balanced headings; the primer body was
@@ -428,8 +430,8 @@
           <span class="brand__name">from seed to shelter</span>
         </a>
         <p class="footer__blurb">
-          A small initiative working on food and nutrition for displaced
-          people.
+          An initiative working on food and nutrition with displaced
+          communities.
         </p>
         <!-- Written out, never a mailto: — site-wide rule, see CLAUDE.md. -->
         <p class="footer__address">hello [at] fromseedtoshelter [dot] com</p>
