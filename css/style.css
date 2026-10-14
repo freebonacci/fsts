@@ -705,11 +705,11 @@ a:hover {
 /* Replaced elements do not stretch between insets, so the ring is sized
    explicitly: 10% larger than the text box plus a fixed em overhang, so it
    tracks the type. Equal overhang left and right keeps the text centred;
-   the ring sits 0.1em high because Kalam's ink rides high in its line box,
-   and a geometrically centred ring looked low. */
+   the ring sits 0.23em (about 5px) high because Kalam's ink rides high in
+   its line box, and a geometrically centred ring looked low. */
 .note__ring {
   position: absolute;
-  top: calc(-0.4em - 5%);
+  top: calc(-0.53em - 5%);
   left: calc(-0.5em - 5%);
   width: calc(110% + 1em);
   height: calc(110% + 0.6em);
