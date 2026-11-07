@@ -152,9 +152,11 @@
   /* --- Layout ----------------------------------------------------------- */
   /* In rem, not px, so the columns follow the root scale. If the type shrank
      and these did not, the same 720px would hold ~73 characters and break the
-     measure below. 45rem/70rem are 720px/1120px at the base scale. */
+     measure below. 45rem/66.5rem are 720px/1064px at the base scale, 612px/904px
+     on desktop. 66.5rem, down from 70rem, is for the side margins: the wide band
+     read as running edge to edge on a laptop. */
   --container: 45rem;   /* the column everything aligns to                   */
-  --container-wide: 70rem;    /* cards, two-up grids                         */
+  --container-wide: 66.5rem;    /* cards, two-up grids                         */
   --measure: 66ch;      /* prose measure — the brief's 65–70 characters      */
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
 
@@ -245,26 +247,33 @@ video {
    the single lever that moves the whole system: type, spacing and the two
    containers come down together and every relationship between them survives.
    Percent, not px, so a reader who has raised their browser font size keeps
-   that increase — this reduces their size by a tenth, it does not override it.
+   that increase — this scales their size down, it does not override it.
 
-   Desktop only. At 90% the --t--1 tier lands at 11.7px, and the small end of
-   this design is tuned for a phone read in daylight (see the body weight note
-   below), so the reduction would cost more there than it gains. 760px is where
+   Desktop only, at 85%: body lands at 16.2px. The small end of this design is
+   tuned for a phone read in daylight (see the body weight note below), so the
+   reduction would cost more there than it gains. 760px is where
    the team, resource and project grids already go multi-column, so the change
    in scale lands inside a reflow that was happening anyway rather than on its
-   own. Every breakpoint in this file is in px and so none of them shift. */
+   own. Every breakpoint in this file is in px and so none of them shift.
+
+   The primer's <main> is set in px, so it does not move; only its shared header
+   and footer follow this. */
 @media (min-width: 760px) {
-  html { font-size: 90%; }
+  html { font-size: 85%; }
 
   /* The rem ends of these two follow the root, but the vw term in the middle
      does not, and it is what governs section padding from 760px to about
      1200px — leaving it would shrink the type there and not the rhythm around
-     it. Same coefficients, less a tenth. The other vw clamps (--gutter, --t-4,
+     it. Same coefficients, times 0.85. The other vw clamps (--gutter, --t-4,
      --t-fig, --t-addr) sit pinned to their rem maximum at every width this
-     query covers, so they already come down with the root and need nothing. */
+     query covers, so they already come down with the root and need nothing.
+
+     --t--1 is held at 12px: scaled with the rest it would be 11px, too small
+     for captions and footnotes. */
   :root {
-    --section-y:       clamp(2.25rem, 4.05vw, 3.75rem);
-    --section-y-tight: clamp(1.75rem, 2.7vw, 2.5rem);
+    --section-y:       clamp(2.25rem, 3.825vw, 3.75rem);
+    --section-y-tight: clamp(1.75rem, 2.55vw, 2.5rem);
+    --t--1:            0.8824rem;
   }
 }
 
@@ -357,7 +366,7 @@ a:hover {
   max-width: calc(var(--measure) + 2 * var(--gutter));
 }
 
-/* Text blocks keep a readable width inside it: a .panel stretched to 1120px is
+/* Text blocks keep a readable width inside it: a .panel stretched to the wide band is
    mostly empty box. Both panels are capped identically — the results block and
    the limitations block must stay the same size as each other. */
 .page--wide .panel { max-width: var(--container); }
