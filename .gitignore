@@ -5,3 +5,7 @@ tools/shots/
 tools/svg-render.png
 tools/logo-diff.png
 tools/render.html
+
+# Original, full-size photos (some show residents). Only resized,
+# face-blurred copies in img/ are published.
+img/microgreens 26/

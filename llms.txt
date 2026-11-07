@@ -2,7 +2,7 @@
 
 > A small, part-time initiative, founded in 2025, tackling food and nutrition challenges facing displaced people. We look for vulnerabilities that bigger organisations overlook and work with local organisations and communities to address them. We publish what we learn, including the limitations.
 
-Current work: a completed microgreens pilot at Zervou refugee camp on Samos, Greece (2025), now being extended with partners in northern Greece; and research in progress on food insecurity among newly arrived refugees in Nakivale, Kyaka II and Rwamwanja settlements in south-western Uganda, with site visits planned for December 2026.
+Current work: microgreens in Greece, from a community farm at a community centre outside Zervou refugee camp on Samos (2025) to free seeds and videos for growing at home (2026), with an open invitation to other NGOs to pilot it; and research in progress on food insecurity among newly arrived refugees in Nakivale, Kyaka II and Rwamwanja settlements in south-western Uganda, with site visits planned for December 2026.
 
 Everything we publish is free to use, adapt and republish. Contact: hello [at] fromseedtoshelter [dot] com
 
@@ -10,7 +10,8 @@ Everything we publish is free to use, adapt and republish. Contact: hello [at] f
 
 - [Home](https://fromseedtoshelter.com/): who we are, how we work, and our current projects
 - [Our work](https://fromseedtoshelter.com/work.html): an overview of our projects in Greece and Uganda
-- [Microgreens at Zervou Camp, Samos](https://fromseedtoshelter.com/greece.html): the Greece pilot — context, what it cost, what it produced, its limitations, and where it is now
+- [Microgreens in Greece](https://fromseedtoshelter.com/greece.html): the project from the 2025 Samos farm (results and limitations) to growing at home and the free-seed stall
+- [Low-cost homegrown microgreens intervention, an invitation to pilot](https://fromseedtoshelter.com/docs/microgreens-for-ngos.html): a two-page offer of free seeds and videos for NGOs in Greece
 - [A primer on food insecurity in south-western Uganda's refugee settlements](https://fromseedtoshelter.com/docs/uganda-food-insecurity-primer.html): our early understanding of the food situation in Nakivale, Kyaka II and Rwamwanja, including the "first-harvest gap" facing new arrivals, with references
 - [Resources](https://fromseedtoshelter.com/resources.html): reports, the microgreens toolkit and instructional videos
 - [About](https://fromseedtoshelter.com/about.html): team, partners and supporters
@@ -25,4 +26,5 @@ Everything we publish is free to use, adapt and republish. Contact: hello [at] f
 ## Videos
 
 - [Setting up a community microgreens farm](https://www.youtube.com/watch?v=76C25r9ARw4)
-- [Growing microgreens with a minimal household set-up](https://www.youtube.com/watch?v=-H354Xwou9o)
+- [Growing radish microgreens in a food box, in seven languages](https://youtube.com/playlist?list=PLG4yYR4nvIKI)
+- [Growing pea microgreens in a food box, in seven languages](https://youtube.com/playlist?list=PLPuLv_2zT6h0)
