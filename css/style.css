@@ -1349,7 +1349,7 @@ a:hover {
 
 
 /* ----------------------------------------------------------------------------
-   13h. Team — about.html. Three across on desktop, stacked below.
+   13h. Team — about.html. Five across on desktop, stacked below.
         Names, roles and contact only: no bios, no photographs.
 ---------------------------------------------------------------------------- */
 
@@ -1362,12 +1362,16 @@ a:hover {
   list-style: none;
 }
 
-/* Five people: three across from 760px, so the three leads share the first
-   row and the two team members the second. Not five across: at 1000px a fifth
-   of the container is ~158px, which wraps "Partnerships lead" and the longer
-   names. Not two across on a tablet either: 2-2-1 leaves one person alone. */
+/* Five people, alphabetical by first name: one row of five from 1000px, with
+   the names down a step (--t-0) and the gap tightened so "Partnerships lead"
+   still fits on one line. Three across on a tablet (3 + 2), where a fifth of
+   the width is too narrow for the roles; stacked below that. */
 @media (min-width: 760px) {
   .team { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+}
+
+@media (min-width: 1000px) {
+  .team { grid-template-columns: repeat(5, 1fr); gap: var(--sp-5); }
 }
 
 .team > li {
@@ -1375,7 +1379,7 @@ a:hover {
   padding-top: var(--sp-5);
 }
 
-.team h3 { font-size: var(--t-1); }
+.team h3 { font-size: var(--t-0); }
 
 .team__role {
   margin-top: var(--sp-1);
