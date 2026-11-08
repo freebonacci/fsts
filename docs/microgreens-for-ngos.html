@@ -66,22 +66,20 @@
       <p class="eyebrow eyebrow--stone">For organisations in Greece · November 2026</p>
       <h1 id="invite-heading" class="invite__title">Invitation to pilot: low-cost homegrown microgreens</h1>
 
-      <!-- Photos sit beside the text, alternating sides, and are dropped in
-           print. Most are floated as on greece.html (.figure--aside); the
-           two sections with little text, or with links that belong under
-           the photo, use a two-column grid instead (.invite__split). -->
+      <!-- Photos sit beside the text as on greece.html (.figure--aside),
+           alternating sides, and are dropped in print. -->
       <h2>Challenges addressed</h2>
-      <div class="invite__split invite__split--photo-right">
-        <ul class="invite__challenges">
-          <li>Poor diet quality</li>
-          <li>Idleness and waiting</li>
-        </ul>
-        <figure class="figure">
+      <div class="prose flow">
+        <figure class="figure figure--aside figure--right">
           <img src="../img/invite-stall-team.jpg"
                alt="Three people under a reed shade holding up trays of pea microgreens, behind a table with a cardboard sign reading: grow vegetables."
                width="640" height="427">
           <figcaption>Offering free seeds to residents of Zervou Camp</figcaption>
         </figure>
+        <ul class="invite__challenges">
+          <li>Poor diet quality</li>
+          <li>Idleness and waiting</li>
+        </ul>
       </div>
 
       <h2>Why this solution?</h2>
@@ -141,22 +139,22 @@
 
       <h2>Video tutorials</h2>
       <!-- Residents' faces are pixelated in the image file itself. -->
-      <div class="invite__split">
-        <div>
-          <figure class="figure">
-            <img src="../img/greece-seed-video.jpg" loading="lazy"
-                 alt="A member of our team showing a microgreens video on a phone to two men at the seed stall. The men's faces are blurred."
-                 width="640" height="426">
-            <figcaption>Watching the video at the seed stall, Samos</figcaption>
-          </figure>
+      <!-- The links ride inside the figure so they sit under the photo, left
+           of the language tiles. In print the photo and caption drop out
+           and the links stay. -->
+      <div class="prose flow">
+        <figure class="figure figure--aside figure--left invite__video-figure">
+          <img src="../img/greece-seed-video.jpg" loading="lazy"
+               alt="A member of our team showing a microgreens video on a phone to two men at the seed stall. The men's faces are blurred."
+               width="640" height="426">
+          <figcaption>Watching the video at the seed stall, Samos</figcaption>
           <p class="link-row invite__video-links">
             <a class="link-arrow" href="https://youtube.com/playlist?list=PLG4yYR4nvIKI"
                target="_blank" rel="noopener">Radish videos →</a>
             <a class="link-arrow" href="https://youtube.com/playlist?list=PLPuLv_2zT6h0"
                target="_blank" rel="noopener">Pea videos →</a>
           </p>
-        </div>
-        <div class="prose flow">
+        </figure>
         <p>
           We built video tutorials in the languages most spoken by refugees in
           Greece. In the videos, we demonstrate how to use recycled materials
@@ -172,7 +170,6 @@
           <li><span lang="bn">বাংলা</span> (Bengali)</li>
           <li><span lang="el">Ελληνικά</span> (Greek)</li>
         </ul>
-        </div>
       </div>
 
       <h2>Cost per person, post-pilot</h2>

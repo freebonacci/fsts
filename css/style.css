@@ -1590,25 +1590,12 @@ a:hover {
   line-height: var(--lh-snug);
 }
 
-/* Photo beside text as a grid rather than a float: for "Challenges",
-   whose two short lines would leave a float hanging over empty space,
-   and "Video tutorials", whose links sit in the photo's column. Same 37%
-   photo width as .figure--aside. Stacked below 600px. */
-.invite__split {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-5);
-  max-width: var(--measure);
-}
-
-@media (min-width: 600px) {
-  .invite__split { grid-template-columns: 37% 1fr; align-items: start; }
-  .invite__split--photo-right { grid-template-columns: 1fr 37%; }
-}
-
 /* The two challenges as short statements between rules, so they carry
-   the width beside the photo instead of sitting as small bullets. */
+   the width beside the photo instead of sitting as small bullets.
+   flow-root, so the rules stop at the floated photo rather than running
+   underneath it. */
 .invite__challenges {
+  display: flow-root;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1625,10 +1612,10 @@ a:hover {
 
 .invite__challenges li:last-child { border-bottom: 1px solid var(--rule-strong); }
 
-/* Tighter than a .link-row elsewhere, so both fit on one line under a
-   37% photo. */
+/* Inside the video figure, under its caption. Tighter than a .link-row
+   elsewhere, so both fit on one line under a 37% photo. */
 .invite__video-links {
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-3);
   column-gap: var(--sp-3);
 }
 
@@ -1654,12 +1641,16 @@ a:hover {
   body:has(.invite) .page-header,
   body:has(.invite) .footer__links,
   body:has(.invite) .footer__legal,
-  .invite .figure { display: none; }
-  .invite__split { display: block; }
+  .invite .figure:not(.invite__video-figure) { display: none; }
+  .invite .flow > .figure:not(.invite__video-figure) + * { margin-top: 0; }
+  /* The video figure keeps its links on paper: photo and caption go, the
+     links print as a plain line below the heading. */
+  .invite__video-figure img,
+  .invite__video-figure figcaption { display: none; }
+  .prose > .invite__video-figure { float: none; width: auto; margin: 0 0 var(--sp-2); }
+  .invite__video-links { margin-top: 0; }
   .invite__challenges { font-size: var(--t-0); }
   .invite__challenges li { padding-block: var(--sp-1); }
-  .invite__video-links { margin-top: 0; margin-bottom: var(--sp-2); }
-  .invite .flow > .figure + * { margin-top: 0; }
 
   body:has(.invite),
   body:has(.invite) .invite { background: var(--paper); }
