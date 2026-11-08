@@ -114,7 +114,7 @@
   --t--1:   0.8125rem;  /* 13px — eyebrows, captions, meta                   */
   --t-0:    1.1875rem;  /* 19px — body                                       */
   --t-1:    1.4375rem;  /* 23px — lead paragraph, card headings              */
-  --t-small: 1.0625rem; /* 17px — body copy in compact panels                */
+  --t-small: 1rem;      /* 16px — body copy in compact panels                */
   --t-2:    1.625rem;   /* 26px — section headings                           */
   --t-3:    2rem;       /* 32px — page headings                              */
   --t-4:    clamp(2.125rem, 1.5rem + 2.6vw, 2.625rem); /* 34 → 42px — hero   */
@@ -1039,7 +1039,7 @@ a:hover {
    with the top of the photo. */
 @media (min-width: 600px) {
   .prose > .figure--aside {
-    width: 34%;
+    width: 37%;
     max-width: none;
     margin-top: var(--sp-1);
     margin-bottom: var(--sp-3);
@@ -1053,8 +1053,13 @@ a:hover {
    its photo hang into the next heading. */
 .page--read .prose { display: flow-root; }
 
-/* greece.html: the title sits above the first part rule, at page-title size. */
-.greece-title { font-size: var(--t-3); margin-top: var(--sp-3); }
+/* greece.html headings, in three clear steps: a light hero-size title, the
+   two parts (2025 pilot, 2026 pivot) larger and in Jost 400, and the
+   sub-headings in Jost 400 so they separate from the Spectral body. */
+.greece-title { font-size: var(--t-4); line-height: var(--lh-tight); margin-top: var(--sp-3); }
+.project > h2 { font-size: var(--t-3); font-weight: 400; }
+.project > h3,
+.greece-sub { font-weight: 400; }
 
 /* Sub-headings within a part, and the text under them. */
 .project > h3,
