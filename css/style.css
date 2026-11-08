@@ -1362,14 +1362,12 @@ a:hover {
   list-style: none;
 }
 
-/* Four people: two by two on a tablet, one row of four on desktop, so nobody
-   sits alone on a second row. */
+/* Five people: three across from 760px, so the three leads share the first
+   row and the two team members the second. Not five across: at 1000px a fifth
+   of the container is ~158px, which wraps "Partnerships lead" and the longer
+   names. Not two across on a tablet either: 2-2-1 leaves one person alone. */
 @media (min-width: 760px) {
-  .team { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
-}
-
-@media (min-width: 1000px) {
-  .team { grid-template-columns: repeat(4, 1fr); }
+  .team { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
 }
 
 .team > li {
