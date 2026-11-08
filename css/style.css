@@ -1039,14 +1039,17 @@ a:hover {
 /* For a photograph that wants to sit in a little from the column edges. */
 .figure--narrow { max-width: 40rem; }
 
-/* Two small photos side by side, at every width: at the foot of greece.html. */
+/* Two small photos side by side, at every width: at the foot of greece.html.
+   The photos keep their own shapes (2:1 stall, 3:2 seed bags), and the
+   columns are sized in the same 2 : 1.5 ratio so both come out the same
+   height. */
 .figure-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1.5fr;
   gap: var(--sp-4);
   max-width: var(--measure);
 }
-.figure-pair .figure img { aspect-ratio: 2 / 1; }
+.figure-pair .figure img { aspect-ratio: auto; height: auto; }
 
 /* A photo set beside its text, alternating sides down greece.html, so the
    page reads as text with pictures rather than a stack of large photos.
