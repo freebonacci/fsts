@@ -114,6 +114,7 @@
   --t--1:   0.8125rem;  /* 13px — eyebrows, captions, meta                   */
   --t-0:    1.1875rem;  /* 19px — body                                       */
   --t-1:    1.4375rem;  /* 23px — lead paragraph, card headings              */
+  --t-small: 1.0625rem; /* 17px — body copy in compact panels                */
   --t-2:    1.625rem;   /* 26px — section headings                           */
   --t-3:    2rem;       /* 32px — page headings                              */
   --t-4:    clamp(2.125rem, 1.5rem + 2.6vw, 2.625rem); /* 34 → 42px — hero   */
@@ -366,9 +367,7 @@ a:hover {
   max-width: calc(var(--measure) + 2 * var(--gutter));
 }
 
-/* The results/limitations pair breaks out to the wide band so the two
-   panels can sit side by side; the text around it stays in the column. */
-.page--read main .wrap--wide { max-width: var(--container-wide); }
+/* greece.html is split into several .wrap blocks around the panel pair. */
 .page--read main .wrap + .wrap { margin-top: var(--sp-6); }
 
 /* Text blocks keep a readable width inside it: a .panel stretched to the wide band is
@@ -1040,7 +1039,7 @@ a:hover {
    with the top of the photo. */
 @media (min-width: 600px) {
   .prose > .figure--aside {
-    width: 42%;
+    width: 34%;
     max-width: none;
     margin-top: var(--sp-1);
     margin-bottom: var(--sp-3);
@@ -1105,8 +1104,19 @@ a:hover {
   gap: var(--sp-5);
 }
 
+/* The pair sits in the reading column, so each panel is half its width.
+   Padding, gaps and type come down together to suit the narrower box —
+   identically for both panels, so neither reads as the lesser one. */
 @media (min-width: 760px) {
-  .panels--pair { grid-template-columns: 1fr 1fr; }
+  .panels--pair { grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
+  .panels--pair > .panel { padding: var(--sp-5); }
+  .panels--pair .panel__label { margin-bottom: var(--sp-4); }
+  .panels--pair .panel > p,
+  .panels--pair .facts > li { font-size: var(--t-small); }
+  .panels--pair .panel > p + p { margin-top: var(--sp-4); }
+  .panels--pair .facts > li { padding-block: var(--sp-3); }
+  .panels--pair .facts > li:first-child { padding-top: 0; }
+  .panels--pair .fig { font-size: var(--t-0); }
 }
 
 /* Grid gap does the spacing, and the pair spans the full column rather than
