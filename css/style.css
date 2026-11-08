@@ -1590,27 +1590,12 @@ a:hover {
   line-height: var(--lh-snug);
 }
 
-/* The two challenges as short statements between rules, so they carry
-   the width beside the photo instead of sitting as small bullets.
-   flow-root, so the rules stop at the floated photo rather than running
-   underneath it. */
-.invite__challenges {
-  display: flow-root;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: var(--t-1);
-  line-height: var(--lh-snug);
-}
-
-.invite__challenges li {
-  padding-block: var(--sp-4);
-  border-top: 1px solid var(--rule-strong);
-}
-
-.invite__challenges li:last-child { border-bottom: 1px solid var(--rule-strong); }
+/* "Challenges addressed": the heading sits inside the text block, after
+   the floated photo, so the photo's top lines up with the heading's
+   accent bar. The block takes the gap an h2 would normally have above
+   it, and the list follows the heading as in every other section. */
+.invite__top { margin-top: var(--sp-7); }
+.invite__top > h2 + * { margin-top: 0; }
 
 /* Inside the video figure, under its caption. Tighter than a .link-row
    elsewhere, so both fit on one line under a 37% photo. */
@@ -1649,8 +1634,7 @@ a:hover {
   .invite__video-figure figcaption { display: none; }
   .prose > .invite__video-figure { float: none; width: auto; margin: 0 0 var(--sp-2); }
   .invite__video-links { margin-top: 0; }
-  .invite__challenges { font-size: var(--t-0); }
-  .invite__challenges li { padding-block: var(--sp-1); }
+  .invite__top { margin-top: var(--sp-4); }
 
   body:has(.invite),
   body:has(.invite) .invite { background: var(--paper); }
