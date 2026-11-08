@@ -130,6 +130,7 @@
   --lh-body:  1.75;   /* body — brief specifies 1.7–1.8                      */
   --lh-print: 1.5;    /* body on paper, where one-page fit matters          */
   --tracking-label: 0.14em;
+  --tracking-tight: 0.06em;  /* labels that must fit a narrow column       */
 
   /* --- Space: single 4px root, no arbitrary values anywhere -------------- */
   --sp-1:   0.25rem;   /*   4 */
@@ -1589,6 +1590,50 @@ a:hover {
   line-height: var(--lh-snug);
 }
 
+/* Photo beside text as a grid rather than a float: for "Challenges",
+   whose two short lines would leave a float hanging over empty space,
+   and "Video tutorials", whose links sit in the photo's column. Same 37%
+   photo width as .figure--aside. Stacked below 600px. */
+.invite__split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  max-width: var(--measure);
+}
+
+@media (min-width: 600px) {
+  .invite__split { grid-template-columns: 37% 1fr; align-items: start; }
+  .invite__split--photo-right { grid-template-columns: 1fr 37%; }
+}
+
+/* The two challenges as short statements between rules, so they carry
+   the width beside the photo instead of sitting as small bullets. */
+.invite__challenges {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--t-1);
+  line-height: var(--lh-snug);
+}
+
+.invite__challenges li {
+  padding-block: var(--sp-4);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.invite__challenges li:last-child { border-bottom: 1px solid var(--rule-strong); }
+
+/* Tighter than a .link-row elsewhere, so both fit on one line under a
+   37% photo. */
+.invite__video-links {
+  margin-top: var(--sp-4);
+  column-gap: var(--sp-3);
+}
+
+.invite__video-links .link-arrow { letter-spacing: var(--tracking-tight); }
+
 /* Two landscape photos at the foot of the page, side by side at every
    width, like the pair at the foot of greece.html. */
 .invite__pair {
@@ -1610,6 +1655,10 @@ a:hover {
   body:has(.invite) .footer__links,
   body:has(.invite) .footer__legal,
   .invite .figure { display: none; }
+  .invite__split { display: block; }
+  .invite__challenges { font-size: var(--t-0); }
+  .invite__challenges li { padding-block: var(--sp-1); }
+  .invite__video-links { margin-top: 0; margin-bottom: var(--sp-2); }
   .invite .flow > .figure + * { margin-top: 0; }
 
   body:has(.invite),
