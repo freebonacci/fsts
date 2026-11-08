@@ -1039,6 +1039,15 @@ a:hover {
 /* For a photograph that wants to sit in a little from the column edges. */
 .figure--narrow { max-width: 40rem; }
 
+/* Two small photos side by side, at every width: at the foot of greece.html. */
+.figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  max-width: var(--measure);
+}
+.figure-pair .figure img { aspect-ratio: 2 / 1; }
+
 /* A photo set beside its text, alternating sides down greece.html, so the
    page reads as text with pictures rather than a stack of large photos.
    Full width on a phone, where a 40% photo would be a thumbnail. The
