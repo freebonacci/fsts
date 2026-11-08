@@ -14,7 +14,7 @@
    License, so redistribution here is permitted. Total 93KB for all four files,
    cached once across all five pages.
 
-     jost-var.woff2            27KB   variable, covers 300–400 in one file
+     jost-var.woff2            27KB   variable; 300–500 used, from one file
      spectral-300.woff2        22KB
      spectral-400.woff2        21KB
      spectral-400-italic.woff2 22KB
@@ -24,13 +24,14 @@
    the reflow on a slow connection.
 ---------------------------------------------------------------------------- */
 
-/* Jost is a variable font. One file serves both weights; the range below lets
-   the browser interpolate 300 and 400 rather than synthesising either. */
+/* Jost is a variable font. One file serves every weight; the range below lets
+   the browser interpolate 300 to 500 rather than synthesising any of them.
+   500 is used only for the sub-headings on greece.html. */
 @font-face {
   font-family: "Jost";
   src: url("../fonts/jost-var.woff2") format("woff2-variations"),
        url("../fonts/jost-var.woff2") format("woff2");
-  font-weight: 300 400;
+  font-weight: 300 500;
   font-style: normal;
   font-display: swap;
 }
@@ -163,6 +164,7 @@
 
   --radius: 4px;        /* 4px or square. Nothing larger.                    */
   --stroke-crayon: 3px;   /* hand-drawn marks in "what we do"               */
+  --stroke-bar: 3px;      /* short accent bar above part headings           */
 }
 
 /* Dark sections re-point the semantic tokens; components stay unchanged. */
@@ -1058,8 +1060,20 @@ a:hover {
    sub-headings in Jost 400 so they separate from the Spectral body. */
 .greece-title { font-size: var(--t-4); line-height: var(--lh-tight); margin-top: var(--sp-3); }
 .project > h2 { font-size: var(--t-3); font-weight: 400; }
+
+/* A short bar, not an underline: on this site an underline means a link.
+   Same idea as the bar under the primer's headings. */
+.project > h2::before {
+  content: "";
+  display: block;
+  width: var(--sp-7);
+  height: var(--stroke-bar);
+  margin-bottom: var(--sp-4);
+  background: var(--accent);
+}
+
 .project > h3,
-.greece-sub { font-weight: 400; }
+.greece-sub { font-weight: 500; }
 
 /* Sub-headings within a part, and the text under them. */
 .project > h3,
@@ -1272,6 +1286,10 @@ a:hover {
 .resource__foot { margin-top: auto; padding-top: var(--sp-5); }
 
 .resource--pending { border-style: dashed; }
+
+/* On a Paper section (the videos on resources.html) the cards invert to Mist,
+   so they still read as cards rather than outlines on white. */
+.section--paper .resources { --bg-raised: var(--mist); }
 
 
 /* ----------------------------------------------------------------------------
