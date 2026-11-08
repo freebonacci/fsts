@@ -771,6 +771,11 @@ a:hover {
   object-fit: cover;
 }
 
+/* The photo links to the same page as the card's text link, for mouse and
+   touch. It is out of the tab order and hidden from screen readers, so
+   nobody meets the same destination twice. */
+.card__media-link { display: block; }
+
 .card__body {
   display: flex;
   flex-direction: column;
