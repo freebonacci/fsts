@@ -1,173 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="invite-page">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Low-cost homegrown microgreens intervention, an invitation to pilot | From Seed to Shelter</title>
-<meta name="description" content="Free microgreen seeds and video guides in seven languages for NGOs working with refugees in Greece.">
+<title>Invitation to pilot: low-cost homegrown microgreens — From Seed to Shelter</title>
+<meta name="description" content="Free microgreen seed and video guides in seven languages for organisations working with refugees in Greece.">
+
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://fromseedtoshelter.com/docs/microgreens-for-ngos.html">
 
 <link rel="preload" href="../fonts/jost-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Site stylesheet for the header and footer. The body is a one-pager in the
-     primer's family (Newsreader / Archivo on cream), scoped to <main>. -->
 <link rel="stylesheet" href="../css/style.css">
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://fromseedtoshelter.com/docs/microgreens-for-ngos.html">
-<meta property="og:title" content="Low-cost homegrown microgreens intervention, an invitation to pilot">
-<meta property="og:description" content="Free seeds and video guides in seven languages, for growing fresh greens from a camp food box.">
+<meta property="og:title" content="Invitation to pilot: low-cost homegrown microgreens">
+<meta property="og:description" content="Free seed and video guides in seven languages, for growing fresh greens in a camp food box.">
 <meta property="og:image" content="https://fromseedtoshelter.com/img/microgreens-foodbox-pea.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
-<style>
-  @font-face { font-family: "Archivo"; src: url("../fonts/archivo-var.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
-  @font-face { font-family: "Newsreader"; src: url("../fonts/newsreader-var.woff2") format("woff2"); font-weight: 200 700; font-style: normal; font-display: swap; }
-
-  /* Primer palette, with a green accent in place of its brown so the two
-     documents read as a series without looking like the same one.
-     --accent on --cream is 7.4:1; --muted on --cream 5.6:1. */
-  .one-pager {
-    --cream:  #fbf8f3;
-    --sand:   #f2ece1;
-    --ink:    #22303f;
-    --ink-hd: #15212f;
-    --muted:  #5b6675;
-    --accent: #2f5d34;
-    --line:   #ddd5c8;
-    --line-2: #d3c8b6;
-    --link:   #1d4e79;
-    display: block;
-    background: var(--cream);
-    color: var(--ink);
-    font-family: Archivo, sans-serif;
-    font-size: 16px;
-    line-height: normal;
-  }
-  body { background: #fbf8f3; }
-  .one-pager *, .one-pager *::before, .one-pager *::after { box-sizing: border-box; }
-  .one-pager h1, .one-pager h2, .one-pager h3 { text-wrap: balance; letter-spacing: -0.02em; }
-  .one-pager a { color: var(--link); text-decoration: none; border-bottom: 0.5pt solid rgba(29,78,121,0.45); }
-  .one-pager a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  .one-pager a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-
-  .op-col { max-width: 820px; margin: 0 auto; padding: clamp(30px, 5vw, 52px) clamp(18px, 5vw, 28px); }
-  .op-col + .op-col { border-top: 0.5pt solid var(--line); }
-
-  /* Cover */
-  .op-cover { background: var(--ink-hd); color: #fdfaf4; }
-  .op-cover .op-col { padding-bottom: clamp(26px, 4vw, 40px); }
-  .op-bar { width: 64px; height: 3px; background: #8fbf86; margin: 0 0 22px; }
-  .op-kicker { font-size: 7.4pt; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(246,239,226,0.74); margin: 0 0 14px; }
-  .op-cover h1 { font-family: Newsreader, serif; font-weight: 300; font-size: clamp(30px, 5vw, 46px); line-height: 1.08; margin: 0 0 18px; max-width: 22ch; color: #fdfaf4; }
-  /* Roman, not italic: the italic face is 147KB and would take the page over
-     the 500KB budget for one line. */
-  .op-dek { font-family: Newsreader, serif; font-weight: 300; font-size: clamp(16px, 2.3vw, 21px); line-height: 1.45; margin: 0; max-width: 40ch; color: rgba(253,250,244,0.94); }
-  .op-hero { display: block; width: 100%; height: clamp(190px, 34vw, 340px); object-fit: cover; object-position: 40% 45%; }
-  .op-hero-cap { max-width: 820px; margin: 0 auto; padding: 8px clamp(18px, 5vw, 28px) 0; font-size: 8.6pt; line-height: 1.5; color: var(--muted); }
-
-  /* Type */
-  .op-num { font-size: 7.6pt; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin: 0 0 3mm; }
-  .one-pager h2 { font-family: Newsreader, serif; font-weight: 300; font-size: clamp(28px, 4.4vw, 38px); line-height: 1.06; color: var(--ink-hd); margin: 0 0 6mm; }
-  .one-pager h3 { font-family: Newsreader, serif; font-weight: 400; font-size: 15pt; line-height: 1.2; color: var(--ink-hd); margin: 0 0 2mm; letter-spacing: -0.01em; }
-  .op-lead { font-family: Newsreader, serif; font-weight: 300; font-size: 14pt; line-height: 1.48; color: var(--ink-hd); margin: 0 0 6mm; }
-  .one-pager p { hyphens: none; }
-  .op-body { font-size: 11pt; line-height: 1.62; margin: 0 0 9pt; }
-  .op-body:last-child { margin-bottom: 0; }
-  .op-small { font-size: 9.6pt; line-height: 1.55; color: var(--muted); margin: 0; }
-
-  /* Figures */
-  .op-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8mm; margin: 0 0 7mm; }
-  .op-fig { font-family: Newsreader, serif; font-size: 30pt; font-weight: 300; line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
-  .op-stats p { margin: 3mm 0 0; font-size: 10pt; line-height: 1.5; color: var(--muted); }
-
-  /* Materials */
-  .op-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 5mm; margin: 0 0 6mm; }
-  .op-card { background: var(--sand); padding: 18px 20px 20px; }
-  .op-card .op-meta { font-size: 7.4pt; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin: 0 0 3mm; }
-  .op-card p { font-size: 10pt; line-height: 1.55; margin: 0 0 4mm; }
-  .op-card .op-go { font-size: 10pt; font-weight: 600; }
-  .op-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6mm; padding: 0; list-style: none; }
-  .op-langs li { font-size: 9.6pt; padding: 3px 10px; border: 0.5pt solid var(--line-2); background: #fff; }
-  .op-links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0; font-size: 10pt; }
-
-  /* Steps */
-  .op-steps { margin: 0 0 6mm; padding: 0; list-style: none; counter-reset: step; }
-  .op-steps li { display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; padding: 3.5mm 0; border-top: 0.5pt solid var(--line); font-size: 10.5pt; line-height: 1.55; }
-  .op-steps li:last-child { border-bottom: 0.5pt solid var(--line); }
-  .op-steps li::before { counter-increment: step; content: counter(step); font-family: Newsreader, serif; font-size: 14pt; line-height: 1.2; color: var(--accent); }
-  .op-steps strong, .op-limits strong { font-weight: 600; color: var(--ink-hd); }
-
-  /* The offer */
-  .op-offer { border-left: 1.5pt solid var(--accent); padding-left: 7mm; margin: 0 0 7mm; }
-  .op-offer .op-big { font-family: Newsreader, serif; font-weight: 300; font-size: clamp(24px, 3.6vw, 30px); line-height: 1.15; color: var(--ink-hd); margin: 0 0 4mm; letter-spacing: -0.02em; }
-
-  /* Limitations: same weight as everything else, not small print. */
-  .op-limits { margin: 0; padding: 0; list-style: none; }
-  .op-limits li { padding: 3mm 0 3mm 18px; position: relative; font-size: 10.5pt; line-height: 1.55; border-top: 0.5pt solid var(--line); }
-  .op-limits li:last-child { border-bottom: 0.5pt solid var(--line); }
-  .op-limits li::before { content: ""; position: absolute; left: 1px; top: calc(3mm + 0.6em); width: 6px; height: 6px; background: var(--accent); }
-
-  .op-fig-photo { margin: 0 0 7mm; }
-  .op-fig-photo img { display: block; width: 100%; max-width: 560px; height: auto; }
-  .op-fig-photo figcaption { margin-top: 8px; font-size: 8.6pt; line-height: 1.5; color: var(--muted); }
-
-  .op-cta { background: var(--sand); padding: 20px 22px; }
-  .op-cta p { margin: 0; font-size: 11pt; line-height: 1.6; }
-  .op-cta p + p { margin-top: 3mm; }
-
-
-  @media (max-width: 680px) {
-    .op-stats { display: block; }
-    .op-stats > div { position: relative; padding-left: 18px; margin: 0 0 10px; }
-    .op-stats > div::before { content: ""; position: absolute; left: 1px; top: 0.55em; width: 6px; height: 6px; background: var(--accent); }
-    .op-fig { display: inline; font-size: 17pt; margin-right: 4px; }
-    .op-stats p { display: inline; margin: 0; font-size: 11pt; color: var(--ink); }
-  }
-
-  /* Print / save as PDF: two A4 sides. No site header, no photo; the footer
-     stays, because it carries the address. */
-  @page { size: A4; margin: 12mm 13mm; }
-  @media print {
-    .skip-link, .site-header, .op-hero, .op-hero-cap, .op-fig-photo, .footer__links, .footer__legal { display: none !important; }
-    body, .one-pager { background: #fff; }
-    /* Scaled as a block so the two sides fit; the type ratios stay as on screen. */
-    .one-pager, .site-footer { zoom: 0.8; }
-    .op-links { display: none; }
-    .op-cover { background: #fff; color: var(--ink-hd); }
-    .op-cover h1, .op-dek { color: var(--ink-hd); }
-    .op-kicker { color: var(--muted); }
-    .op-bar { background: var(--accent); }
-    .op-col { max-width: none; padding: 5mm 0; }
-    .op-cover .op-col { padding-top: 0; }
-    .one-pager h2 { font-size: 20pt; margin-bottom: 3mm; }
-    .op-lead { font-size: 11.5pt; margin-bottom: 3mm; }
-    .op-body { font-size: 9.5pt; margin-bottom: 5pt; }
-    .op-fig { font-size: 22pt; }
-    .op-stats { gap: 6mm; margin-bottom: 4mm; }
-    .op-stats p, .op-card p, .op-steps li, .op-limits li { font-size: 9pt; }
-    .op-steps li, .op-limits li { padding-top: 1.8mm; padding-bottom: 1.8mm; }
-    .op-card { padding: 10px 12px; background: var(--sand); }
-    .op-card, .op-steps li, .op-offer, .op-cta, .op-limits li { break-inside: avoid; }
-    .one-pager a { border-bottom: none; color: var(--link); }
-    .op-print-url { display: inline !important; }
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .site-footer { background: #fff; color: var(--ink); padding: 3mm 0 0; margin: 0; border-top: 0.5pt solid #ddd5c8; }
-    .site-footer .wrap { padding: 0; max-width: none; }
-    .footer__blurb { display: none; }
-    .site-footer .brand__mark { filter: invert(1); }
-    .site-footer * { color: #22303f !important; }
-    .footer__grid { display: block; }
-  }
-  .op-print-url { display: none; font-size: 0.9em; color: var(--muted); }
-</style>
 </head>
-<body>
+
+<body class="page--read">
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -188,140 +46,143 @@
   </div>
 </header>
 
-<main id="main" class="one-pager">
 
-<section class="op-cover" aria-labelledby="op-title">
-  <div class="op-col">
-    <div class="op-bar"></div>
-    <p class="op-kicker">For NGOs in Greece · November 2026</p>
-    <h1 id="op-title">Low-cost homegrown microgreens intervention, an invitation to pilot</h1>
-    <p class="op-dek">Free microgreen seeds and step-by-step videos in seven languages, for organisations working with refugees in Greece.</p>
-  </div>
-</section>
+<main id="main">
 
-<img class="op-hero" src="../img/microgreens-foodbox-pea.jpg"
-     alt="Pea microgreens about ten centimetres tall, growing in a blue plastic food box."
-     width="1200" height="900">
-<p class="op-hero-cap">Pea microgreens grown in a food box like those handed out in the camps, Samos, October 2026.</p>
+  <section class="section page-header page-header--bare">
+    <div class="wrap">
+      <a class="link-arrow" href="../greece.html">← Microgreens in Greece</a>
+    </div>
+  </section>
 
-<!-- A. The benefit -->
-<div class="op-col">
-  <p class="op-num">01</p>
-  <h2>Why microgreens</h2>
-  <p class="op-lead">Refugees in Greek camps generally receive enough calories, but very little that is fresh. On Samos, 77.8% of camp residents we interviewed said the food was not healthy or not fresh.</p>
-  <div class="op-stats">
-    <div>
-      <div class="op-fig">5×</div>
-      <p>more vitamins and carotenoids per gram than the mature vegetable, on average.<sup><a href="https://agresearchmag.ars.usda.gov/2014/jan/greens" target="_blank" rel="noopener" aria-label="Source: USDA Agricultural Research">†</a></sup></p>
-    </div>
-    <div>
-      <div class="op-fig">7–13</div>
-      <p>days from seed to harvest, with no garden needed.</p>
-    </div>
-    <div>
-      <div class="op-fig">92.6%</div>
-      <p>of people we interviewed in Zervou Camp wanted microgreens to stay in their diet.</p>
-    </div>
-  </div>
-  <p class="op-body">Microgreens are seedlings eaten a week or two after sowing. The crops we grow are high in vitamins C, E and K. Growing them at home also gives people some control over their own health and something to do in camps where idleness is a real problem, and gardening is good for mental health.</p>
-  <p class="op-body">In 2025, with selfm.aid, we ran a pilot farm at a community centre outside Zervou Camp. Over 59 days it supplemented 2,300 plates, at about $0.06 per person for two plates a day, and produced 74–94% of a commercial farm's yield in temperatures up to 43°C. <a href="../greece.html">More on the pilot</a>.</p>
-</div>
 
-<!-- B. The materials -->
-<div class="op-col">
-  <p class="op-num">02</p>
-  <h2>What we have made</h2>
-  <p class="op-lead">Short video guides that show how to grow microgreens at home using only the disposable plastic food boxes handed out in camps every day, water and seeds.</p>
-  <ul class="op-langs" aria-label="Languages">
-    <li>English</li><li lang="ar">العربية</li><li lang="fa">فارسی</li><li lang="fr">Français</li><li lang="tr">Türkçe</li><li lang="bn">বাংলা</li><li lang="el">Ελληνικά</li>
-  </ul>
-  <div class="op-cards">
-    <div class="op-card">
-      <p class="op-meta">Ready in 7–8 days</p>
-      <h3>Radish</h3>
-      <p>The fastest crop: ready to eat in about a week.</p>
-      <a class="op-go" href="https://youtube.com/playlist?list=PLG4yYR4nvIKI" target="_blank" rel="noopener">Watch the radish videos →</a>
-      <span class="op-print-url">youtube.com/playlist?list=PLG4yYR4nvIKI</span>
-    </div>
-    <div class="op-card">
-      <p class="op-meta">Ready in 12–13 days</p>
-      <h3>Pea</h3>
-      <p>Takes almost twice as long, for a larger shoot.</p>
-      <a class="op-go" href="https://youtube.com/playlist?list=PLPuLv_2zT6h0" target="_blank" rel="noopener">Watch the pea videos →</a>
-      <span class="op-print-url">youtube.com/playlist?list=PLPuLv_2zT6h0</span>
-    </div>
-  </div>
-  <p class="op-body">The videos are free to share, for example over WhatsApp. For organisations that want to grow at a larger scale, we have also published the toolkit and full evaluation from the Samos farm.</p>
-  <p class="op-links">
-    <a href="https://drive.google.com/file/d/1I5BwR0GalXsH7COrTW7j7N7vYf8COBq2/view?usp=sharing" target="_blank" rel="noopener">Community farm toolkit →</a>
-    <a href="https://drive.google.com/file/d/1HiKT7T0bPAehhOc65B_rPWRrqNN12Tmt/view?usp=drive_link" target="_blank" rel="noopener">Pilot evaluation →</a>
-  </p>
-</div>
+  <!-- ===================================================================
+       A one-pager for NGOs, about 400 words. Written in the site's own type
+       and colours, not the primer's: it is an offer, not a document. Prints
+       to one side of A4 (see 13k in style.css).
+       =================================================================== -->
+  <section class="section invite" aria-labelledby="invite-heading">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--stone">For organisations in Greece · November 2026</p>
+      <h1 id="invite-heading" class="invite__title">Invitation to pilot: low-cost homegrown microgreens</h1>
+      <p class="lead invite__lead">
+        Free seed and short video guides, so people in camps can grow fresh
+        greens at home in the food boxes they already receive.
+      </p>
 
-<!-- C. How NGOs can apply it -->
-<div class="op-col">
-  <p class="op-num">03</p>
-  <h2>How your organisation can use it</h2>
-  <p class="op-lead">It fits alongside work you already do: a food or item distribution, a community centre, or regular contact with households in camps or apartments.</p>
-  <ol class="op-steps">
-    <li><span><strong>Ask us for seeds.</strong> Tell us where you work and roughly how many households you reach.</span></li>
-    <li><span><strong>Share the video</strong> in the right language: send the link, or play it at a session or distribution.</span></li>
-    <li><span><strong>Hand out the seeds.</strong> People grow at home, in boxes they already have.</span></li>
-    <li><span><strong>Tell us what happened</strong>: what grew, what didn't, and whether people kept going. A short check-in after a few weeks is enough.</span></li>
-  </ol>
-</div>
+      <figure class="figure invite__photo">
+        <img src="../img/microgreens-foodbox-pea.jpg"
+             alt="Pea microgreens about ten centimetres tall, growing in a blue plastic food box."
+             width="1200" height="900">
+        <figcaption>Pea microgreens grown in a camp food box, Samos, October 2026</figcaption>
+      </figure>
 
-<!-- D. The offer -->
-<div class="op-col">
-  <p class="op-num">04</p>
-  <h2>The offer</h2>
-  <div class="op-offer">
-    <p class="op-big">Free seeds. You cover the shipping.</p>
-    <p class="op-body">We cover the cost of the seed. Each organisation that takes part receives:</p>
-  </div>
-  <div class="op-stats">
-    <div>
-      <div class="op-fig">4kg</div>
-      <p>of seed, worth about €30, free of charge.</p>
-    </div>
-    <div>
-      <div class="op-fig">390</div>
-      <p>sets of seed: about 60 from 2kg of pea, and 330 from 2kg of radish.</p>
-    </div>
-    <div>
-      <div class="op-fig">€15</div>
-      <p>at most for shipping within Greece, paid by your organisation.</p>
-    </div>
-  </div>
-  <p class="op-body">Since late October 2026 we have handed out seeds from a stall outside Zervou Camp on Samos: 64 sets over the first two distributions. La Maison now runs the stall every week.</p>
-  <figure class="op-fig-photo">
-    <img src="../img/microgreens-seed-stall.jpg" loading="lazy"
-         alt="A table outside a community building with trays of pea and radish microgreens and cardboard signs reading: free seeds, grow in 7 to 12 days, more vitamins, written in English, Arabic, Bengali and French."
-         width="800" height="600">
-    <figcaption>Our free-seed stall on Samos, October 2026. The signs are in English, Arabic, Bengali and French.</figcaption>
-  </figure>
-  <h3>Where this could go</h3>
-  <p class="op-body">If these pilots work, we would like to pool demand across organisations to buy seed at better prices, and use the results to seek funding so seed keeps reaching people. Every organisation that takes part, and tells us how it went, helps build that case.</p>
-</div>
+      <h2>Why microgreens, and why at home</h2>
+      <div class="prose flow">
+        <p>
+          Food in Greek camps is rich in calories but short on variety: on
+          Samos, 77.8% of residents we interviewed said it was not healthy or
+          not fresh. Microgreens are extremely nutrient-dense,
+          <a href="https://agresearchmag.ars.usda.gov/2014/jan/greens"
+             target="_blank" rel="noopener">averaging five times the vitamins
+          and carotenoids</a> of the mature vegetable, per gram.
+        </p>
+        <p>
+          Growing them at home keeps costs down, gives people more control
+          over what they eat, and brings the
+          <a href="https://www.sciencedirect.com/science/article/pii/S2211335516301401?via%3Dihub"
+             target="_blank" rel="noopener">well-evidenced mental health
+          benefits</a> of gardening to camps where idleness is a problem.
+        </p>
+      </div>
 
-<!-- Limitations: same as greece.html, stated plainly and not as small print. -->
-<div class="op-col">
-  <p class="op-num">05</p>
-  <h2>What we don't know yet</h2>
-  <ul class="op-limits">
-    <li><strong>Growing at home is new.</strong> Our results come from a community farm. The Samos distribution is our first test of people growing in their own homes.</li>
-    <li><strong>Micronutrients, not calories.</strong> Microgreens will not address hunger; they help where fresh vegetables are scarce.</li>
-    <li><strong>Some boxes will fail.</strong> Heat, mould and pests all caused problems on the pilot farm. The videos cover the basics, but expect some losses.</li>
-    <li><strong>Our evidence is small.</strong> We interviewed 27 people on Samos, 85% of them men.</li>
-  </ul>
-</div>
+      <h2>Video tutorials</h2>
+      <div class="prose flow">
+        <p>
+          Our videos are made for Greek camps. They come in the languages most
+          spoken by refugees in Greece, and they grow the crop in the
+          disposable boxes handed out at mealtimes. Radish is ready in about a
+          week, pea in under two.
+        </p>
+        <ul class="invite__langs" aria-label="Languages">
+          <li>English</li><li lang="ar">العربية</li><li lang="fa">فارسی</li><li lang="fr">Français</li><li lang="tr">Türkçe</li><li lang="bn">বাংলা</li><li lang="el">Ελληνικά</li>
+        </ul>
+        <p class="link-row">
+          <a class="link-arrow" href="https://youtube.com/playlist?list=PLG4yYR4nvIKI"
+             target="_blank" rel="noopener">Radish videos →</a>
+          <a class="link-arrow" href="https://youtube.com/playlist?list=PLPuLv_2zT6h0"
+             target="_blank" rel="noopener">Pea videos →</a>
+        </p>
+      </div>
 
-<div class="op-col">
-  <div class="op-cta">
-    <p><strong>To ask for seeds,</strong> write to us at the address at the foot of this page with your organisation's name, where you work, and roughly how many households you reach.</p>
-    <p class="op-small">fromseedtoshelter.com/docs/microgreens-for-ngos.html</p>
-  </div>
-</div>
+      <h2>Cost</h2>
+      <!-- Seed cost only. Per 10g serving: radish €0.0564 / 5.8 = €0.0097;
+           pea €0.165 / 21.8 = €0.0076. One of each a day = €0.017, about
+           €0.52 over 30 days. -->
+      <div class="invite__stats">
+        <p>
+          <span class="stat">€0.06</span>
+          <span class="stat__label">of seed per radish box, which yields about 58g</span>
+        </p>
+        <p>
+          <span class="stat">€0.17</span>
+          <span class="stat__label">of seed per pea box: about 218g over two harvests, as it regrows</span>
+        </p>
+        <p>
+          <span class="stat stat--accent">€0.02</span>
+          <span class="stat__label">a day for two 10g servings, one of each: about €0.50 a month</span>
+        </p>
+      </div>
+      <div class="prose flow">
+        <p>
+          Those two servings, at lunch and dinner, meet this share of a
+          person's minimum daily needs under the Sphere standards:
+        </p>
+      </div>
+      <table class="invite__table">
+        <thead>
+          <tr><th scope="col">Vitamin</th><th scope="col">From two servings</th><th scope="col">Share of minimum</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">A</th><td>70 μg</td><td>13%</td></tr>
+          <tr><th scope="row">C</th><td>12.7 mg</td><td>31%</td></tr>
+          <tr><th scope="row">E</th><td>4.9 mg</td><td>62%</td></tr>
+          <tr><th scope="row">K</th><td>41 μg</td><td>85%</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What a pilot looks like</h2>
+      <div class="prose flow">
+        <p>
+          A seed distribution, with the videos shared alongside it: send the
+          link, or play it at a session. On Samos, La Maison hands out seed
+          weekly outside Zervou Camp; residents collected 64 sets over the
+          first two days. Growing at home is new, and some boxes will fail, so
+          we ask each pilot to tell us what grew and whether people kept going.
+        </p>
+      </div>
+
+      <h2>Our offer</h2>
+      <div class="prose flow">
+        <p>
+          We want to bring this to more camps across Greece. Our conversations
+          suggest poor diets are common across them, and we want more refugees
+          to have healthy alternatives to the food that is catered.
+        </p>
+        <p class="invite__offer">
+          Up to 4kg of seed, free, enough to sow about 390 boxes. Your
+          organisation covers shipping within Greece, at most €15.
+        </p>
+        <p>
+          Depending on how the pilots go, we will negotiate better prices with
+          seed suppliers and look for funding to keep the programme running.
+          To take part, write to us at the address at the foot of this page
+          with your organisation's name, where you work, and roughly how many
+          households you reach.
+        </p>
+      </div>
+    </div>
+  </section>
 
 </main>
 

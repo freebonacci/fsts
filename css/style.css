@@ -128,6 +128,7 @@
   --lh-tight: 1.15;   /* display                                             */
   --lh-snug:  1.3;    /* headings                                            */
   --lh-body:  1.75;   /* body — brief specifies 1.7–1.8                      */
+  --lh-print: 1.5;    /* body on paper, where one-page fit matters          */
   --tracking-label: 0.14em;
 
   /* --- Space: single 4px root, no arbitrary values anywhere -------------- */
@@ -1474,6 +1475,166 @@ a:hover {
 }
 
 .links > li > a:hover { color: var(--accent); }
+
+
+/* ----------------------------------------------------------------------------
+   13k. Invitation to pilot — docs/microgreens-for-ngos.html
+
+   A one-pager in the site's own type, borrowing greece.html's accent bar
+   over each heading. Tighter than .project: it should read in one sitting
+   and print to one side of A4.
+---------------------------------------------------------------------------- */
+
+.invite__title {
+  max-width: 22ch;
+  margin-top: var(--sp-3);
+  font-size: var(--t-4);
+  line-height: var(--lh-tight);
+}
+
+.invite__lead { margin-top: var(--sp-4); max-width: var(--measure); }
+
+.invite__photo { margin-top: var(--sp-6); }
+
+.invite h2 {
+  margin-top: var(--sp-7);
+  margin-bottom: var(--sp-3);
+  font-size: var(--t-2);
+  font-weight: 400;
+}
+
+.invite h2::before {
+  content: "";
+  display: block;
+  width: var(--sp-7);
+  height: var(--stroke-bar);
+  margin-bottom: var(--sp-3);
+  background: var(--accent);
+}
+
+.invite__langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--t-small);
+}
+
+.invite__langs li {
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+}
+
+.invite__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  max-width: var(--measure);
+  margin-bottom: var(--sp-5);
+}
+
+.invite__stats > p { margin: 0; }
+
+@media (min-width: 600px) {
+  .invite__stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+.invite__table {
+  width: 100%;
+  max-width: var(--measure);
+  margin-top: var(--sp-4);
+  border-collapse: collapse;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--t-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.invite__table th,
+.invite__table td {
+  padding: var(--sp-2) var(--sp-3) var(--sp-2) 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+}
+
+.invite__table thead th {
+  font-size: var(--t--1);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink-muted);
+  border-bottom-color: var(--rule-strong);
+}
+
+.invite__table tbody th { font-weight: 400; }
+
+/* The offer itself: the one line a reader should leave with. */
+.invite__offer {
+  padding-left: var(--sp-4);
+  border-left: var(--stroke-bar) solid var(--accent);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--t-1);
+  line-height: var(--lh-snug);
+}
+
+/* Print / save as PDF: one side of A4. No site header, back link or photo;
+   the footer stays because it carries the address. */
+@page { size: A4; margin: 12mm 14mm; }
+
+@media print {
+  body:has(.invite) .skip-link,
+  body:has(.invite) .site-header,
+  body:has(.invite) .page-header,
+  body:has(.invite) .footer__links,
+  body:has(.invite) .footer__legal,
+  .invite__photo { display: none; }
+
+  body:has(.invite),
+  body:has(.invite) .invite { background: var(--paper); }
+  /* Every size on the site is in rem, so shrinking the root scales the whole
+     page as a block and keeps the type ratios. zoom is ignored in print. */
+  html.invite-page { font-size: 64%; }
+  .invite__title { max-width: none; font-size: var(--t-3); }
+  .invite__lead { margin-top: var(--sp-2); font-size: var(--t-0); }
+  /* Full page width: on A4 the screen measure leaves a third of the sheet
+     empty, and the type is small enough here to carry a longer line. */
+  body:has(.invite) { --measure: none; }
+  body:has(.invite) main .wrap { max-width: none; padding-inline: 0; }
+  body:has(.invite) .section { padding-block: 0; }
+  .invite { padding: 0; }
+  .invite .prose p, .invite .lead { line-height: var(--lh-print); }
+  .invite .flow > * + * { margin-top: var(--sp-3); }
+  .invite h2 { margin-top: var(--sp-4); margin-bottom: var(--sp-2); }
+  .invite h2::before { margin-bottom: var(--sp-2); }
+  .invite__stats { margin-top: var(--sp-3); margin-bottom: var(--sp-3); }
+  .invite__table { margin-top: var(--sp-2); }
+  .invite__table th, .invite__table td { padding-block: var(--sp-1); }
+  .invite__table, .invite__stats, .invite__offer { break-inside: avoid; }
+  /* The footer is dark on screen; in print it goes light so the address
+     is legible without background graphics. The white logo mark would
+     vanish on paper, so it goes too. */
+  body:has(.invite) .site-footer {
+    padding-block: var(--sp-4) 0;
+    background: none;
+    border-top: 1px solid var(--rule-strong);
+  }
+  /* --slate, not --ink: the footer re-points --ink to a light colour. */
+  body:has(.invite) .site-footer * { color: var(--slate); }
+  body:has(.invite) .site-footer .brand__mark,
+  body:has(.invite) .footer__blurb { display: none; }
+  /* Name and address on one line. */
+  body:has(.invite) .footer__grid > div {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-5);
+  }
+  body:has(.invite) .footer__address { margin-top: 0; }
+}
 
 
 /* ----------------------------------------------------------------------------
