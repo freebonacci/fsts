@@ -1485,16 +1485,16 @@ a:hover {
    and print to one side of A4.
 ---------------------------------------------------------------------------- */
 
+/* Runs the width of the paragraphs below it: not balanced, so the first
+   line fills the column instead of breaking early to even out the two. */
 .invite__title {
-  max-width: 22ch;
+  max-width: var(--measure);
+  text-wrap: wrap;
   margin-top: var(--sp-3);
   font-size: var(--t-4);
   line-height: var(--lh-tight);
 }
 
-.invite__lead { margin-top: var(--sp-4); max-width: var(--measure); }
-
-.invite__photo { margin-top: var(--sp-6); }
 
 .invite h2 {
   margin-top: var(--sp-7);
@@ -1573,7 +1573,10 @@ a:hover {
 .invite__table tbody th { font-weight: 400; }
 
 /* The offer itself: the one line a reader should leave with. */
+/* flow-root, so beside a left-floated photo the box (and its bar) sits
+   next to the photo rather than running underneath it. */
 .invite__offer {
+  display: flow-root;
   padding-left: var(--sp-4);
   border-left: var(--stroke-bar) solid var(--accent);
   font-family: var(--font-display);
@@ -1592,7 +1595,8 @@ a:hover {
   body:has(.invite) .page-header,
   body:has(.invite) .footer__links,
   body:has(.invite) .footer__legal,
-  .invite__photo { display: none; }
+  .invite .figure { display: none; }
+  .invite .flow > .figure + * { margin-top: 0; }
 
   body:has(.invite),
   body:has(.invite) .invite { background: var(--paper); }
@@ -1600,14 +1604,13 @@ a:hover {
      page as a block and keeps the type ratios. zoom is ignored in print. */
   html.invite-page { font-size: 64%; }
   .invite__title { max-width: none; font-size: var(--t-3); }
-  .invite__lead { margin-top: var(--sp-2); font-size: var(--t-0); }
   /* Full page width: on A4 the screen measure leaves a third of the sheet
      empty, and the type is small enough here to carry a longer line. */
   body:has(.invite) { --measure: none; }
   body:has(.invite) main .wrap { max-width: none; padding-inline: 0; }
   body:has(.invite) .section { padding-block: 0; }
   .invite { padding: 0; }
-  .invite .prose p, .invite .lead { line-height: var(--lh-print); }
+  .invite .prose p { line-height: var(--lh-print); }
   .invite .flow > * + * { margin-top: var(--sp-3); }
   .invite h2 { margin-top: var(--sp-4); margin-bottom: var(--sp-2); }
   .invite h2::before { margin-bottom: var(--sp-2); }
