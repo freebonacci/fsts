@@ -37,7 +37,8 @@ Keep both.
 
 **The signature element.** `.panel` is used for both the results block and the
 *Limitations* block on `greece.html`, deliberately identically — same size, same
-padding, same border, one directly beneath the other. Most organisations bury
+padding, same border, side by side at equal width from 760px (stacked, results
+first, below that). Most organisations bury
 their failures; equal visual weight is the one thing meant to make this site
 memorable. Do not de-emphasise the limitations block: not smaller, not muted,
 not moved to the end, not behind a toggle.

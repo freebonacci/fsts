@@ -366,6 +366,11 @@ a:hover {
   max-width: calc(var(--measure) + 2 * var(--gutter));
 }
 
+/* The results/limitations pair breaks out to the wide band so the two
+   panels can sit side by side; the text around it stays in the column. */
+.page--read main .wrap--wide { max-width: var(--container-wide); }
+.page--read main .wrap + .wrap { margin-top: var(--sp-6); }
+
 /* Text blocks keep a readable width inside it: a .panel stretched to the wide band is
    mostly empty box. Both panels are capped identically — the results block and
    the limitations block must stay the same size as each other. */
@@ -1028,6 +1033,37 @@ a:hover {
 /* For a photograph that wants to sit in a little from the column edges. */
 .figure--narrow { max-width: 40rem; }
 
+/* A photo set beside its text, alternating sides down greece.html, so the
+   page reads as text with pictures rather than a stack of large photos.
+   Full width on a phone, where a 40% photo would be a thumbnail. The
+   paragraph after it loses its flow margin so its first line sits level
+   with the top of the photo. */
+@media (min-width: 600px) {
+  .prose > .figure--aside {
+    width: 42%;
+    max-width: none;
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-3);
+  }
+  .prose > .figure--left  { float: left;  margin-inline: 0 var(--sp-5); }
+  .prose > .figure--right { float: right; margin-inline: var(--sp-5) 0; }
+  .prose > .figure--aside + * { margin-top: 0; }
+}
+
+/* Each text block contains its own floats, so a short paragraph never lets
+   its photo hang into the next heading. */
+.page--read .prose { display: flow-root; }
+
+/* greece.html: the title sits above the first part rule, at page-title size. */
+.greece-title { font-size: var(--t-3); margin-top: var(--sp-3); }
+
+/* Sub-headings within a part, and the text under them. */
+.project > h3,
+.greece-sub { margin-top: var(--sp-6); }
+.project > h2 + h3 { margin-top: var(--sp-5); }
+.project > h3 + .prose,
+.greece-sub + .prose { margin-top: var(--sp-3); }
+
 .figure img {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -1058,13 +1094,19 @@ a:hover {
 
 .panel + .panel { margin-top: var(--sp-5); }
 
-/* Results and Limitations stacked at every width, results first (source
-   order), limitations directly beneath. One shared track, so the two are
-   always the same width. Never give the second one a narrower track. */
+/* Results and Limitations: stacked on narrow screens, results first (source
+   order), limitations directly beneath; side by side from 760px with
+   .panels--pair. Equal tracks either way, so the two are always the same
+   width and stretch to the same height. Never give the second one a
+   narrower track. */
 .panels {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-5);
+}
+
+@media (min-width: 760px) {
+  .panels--pair { grid-template-columns: 1fr 1fr; }
 }
 
 /* Grid gap does the spacing, and the pair spans the full column rather than
