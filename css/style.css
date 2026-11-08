@@ -1434,6 +1434,10 @@ a:hover {
   font-weight: inherit;
 }
 
+/* Picks the address out of a paragraph. Accent, not underlined: it is
+   not a link, and an underline would say it was. */
+.address--accent { color: var(--accent); white-space: nowrap; }
+
 .footer__address {
   margin-top: var(--sp-3);
   font-family: var(--font-display);
@@ -1583,6 +1587,16 @@ a:hover {
   font-weight: 400;
   font-size: var(--t-1);
   line-height: var(--lh-snug);
+}
+
+/* Two landscape photos at the foot of the page, side by side at every
+   width, like the pair at the foot of greece.html. */
+.invite__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  max-width: var(--measure);
+  margin-top: var(--sp-7);
 }
 
 /* Print / save as PDF: one side of A4. No site header, back link or photo;
