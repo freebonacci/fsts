@@ -95,9 +95,9 @@
   --radish-light: #E9A0B0;
   --stone-light:  #A9B4BE;
 
-  /* Highlighter yellow, for the one or two lines a reader must not miss.
-     Slate on it 8.3:1; Radish on it 4.6:1 (AA).                          */
-  --highlight:    #FFF1A8;
+  /* Soft highlighter yellow, for the one or two lines a reader must not
+     miss. Muted rather than bright. Slate on it 9.2:1; Radish 5.0:1.    */
+  --highlight:    #F8F0CF;
 
   /* --- Colour: semantic (light sections; overridden on dark) ------------- */
   --bg:           var(--mist);
