@@ -1590,15 +1590,22 @@ a:hover {
   line-height: var(--lh-snug);
 }
 
-/* "Challenges addressed": the heading sits inside the text block, after
-   the floated photo, so the photo's top lines up with the heading's
-   accent bar. The block takes the gap an h2 would normally have above
-   it, and the list follows the heading as in every other section. */
-.invite__top { margin-top: var(--sp-7); }
-.invite__top > h2 + * { margin-top: 0; }
-/* The list keeps to its own column beside the photo, rather than a long
-   sub-bullet running on underneath it. */
+/* "Challenges addressed": the photo's top lines up with the first
+   bullet. The list keeps to its own column beside the photo, rather
+   than a long sub-bullet running on underneath it, and the evidence
+   under each challenge steps down a size. */
 .invite__top > ul { display: flow-root; }
+.invite__top li li { font-size: var(--t-small); }
+
+/* The closing ask, after the photo pair. Set bold in Jost 500: the site
+   loads no bold Spectral, and <strong> is reset to 400 for that reason,
+   so a bold line takes the display face rather than a faux bold. */
+.invite__close { margin-top: var(--sp-6); }
+.invite__close strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-1);
+}
 
 /* Inside the video figure, under its caption. Tighter than a .link-row
    elsewhere, so both fit on one line under a 37% photo. */
@@ -1637,8 +1644,8 @@ a:hover {
   .invite__video-figure figcaption { display: none; }
   .prose > .invite__video-figure { float: none; width: auto; margin: 0 0 var(--sp-2); }
   .invite__video-links { margin-top: 0; }
-  .invite__top { margin-top: var(--sp-4); }
   .invite__top li, .invite__top li > ul { margin-top: 0; }
+  .invite__close { margin-top: var(--sp-4); }
   /* Its photos are hidden, but the empty block would keep its margin. */
   .invite__pair { display: none; }
 
