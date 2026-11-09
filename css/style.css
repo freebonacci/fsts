@@ -95,6 +95,10 @@
   --radish-light: #E9A0B0;
   --stone-light:  #A9B4BE;
 
+  /* Highlighter yellow, for the one or two lines a reader must not miss.
+     Slate on it 8.3:1; Radish on it 4.6:1 (AA).                          */
+  --highlight:    #FFF1A8;
+
   /* --- Colour: semantic (light sections; overridden on dark) ------------- */
   --bg:           var(--mist);
   --bg-raised:    var(--paper);
@@ -1595,6 +1599,23 @@ a:hover {
    than a long sub-bullet running on underneath it, and the evidence
    under each challenge steps down a size. */
 .invite__top > ul { display: flow-root; }
+/* Closer to its heading than the usual section gap: a list's first line
+   sits lower in its box than a paragraph's, so the default gap reads as
+   larger here. (The gap comes from `.wrap > * + *`, not the h2's margin,
+   which collapses into it.) */
+.invite__top { margin-top: var(--sp-2); }
+
+/* Highlighter on the contact lines. Clone, so a line that wraps keeps
+   its padding on both ends of each line. */
+.highlight {
+  padding-inline: var(--sp-1);
+  background: var(--highlight);
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
 .invite__top li li { font-size: var(--t-small); }
 
 /* The closing ask, after the photo pair. Set bold in Jost 500: the site
