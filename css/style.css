@@ -1596,6 +1596,9 @@ a:hover {
    it, and the list follows the heading as in every other section. */
 .invite__top { margin-top: var(--sp-7); }
 .invite__top > h2 + * { margin-top: 0; }
+/* The list keeps to its own column beside the photo, rather than a long
+   sub-bullet running on underneath it. */
+.invite__top > ul { display: flow-root; }
 
 /* Inside the video figure, under its caption. Tighter than a .link-row
    elsewhere, so both fit on one line under a 37% photo. */
@@ -1635,12 +1638,15 @@ a:hover {
   .prose > .invite__video-figure { float: none; width: auto; margin: 0 0 var(--sp-2); }
   .invite__video-links { margin-top: 0; }
   .invite__top { margin-top: var(--sp-4); }
+  .invite__top li, .invite__top li > ul { margin-top: 0; }
+  /* Its photos are hidden, but the empty block would keep its margin. */
+  .invite__pair { display: none; }
 
   body:has(.invite),
   body:has(.invite) .invite { background: var(--paper); }
   /* Every size on the site is in rem, so shrinking the root scales the whole
      page as a block and keeps the type ratios. zoom is ignored in print. */
-  html.invite-page { font-size: 64%; }
+  html.invite-page { font-size: 62%; }
   .invite__title { max-width: none; font-size: var(--t-3); }
   /* Full page width: on A4 the screen measure leaves a third of the sheet
      empty, and the type is small enough here to carry a longer line. */
